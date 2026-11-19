@@ -1,0 +1,11 @@
+{
+  "contrato": "C6 · Escena poscréditos (ficha de película; las series no llevan nada). De /movie/{id}/keywords de TMDB, por id: 179430 (aftercreditsstinger) = después de los créditos, 179431 (duringcreditsstinger) = durante; si el id no cuadra, por el nombre. Solo después: «Escena poscréditos». Solo durante: «Escena durante los créditos». Las dos: «Escenas durante y después de los créditos». Ninguna: null, nunca «Sin escena» (que TMDB no la tenga no dice que no haya). Va al final de la línea de datos de la ficha; el sitio lo pone cada app.",
+  "casos": [
+    { "nombre": "solo después", "palabras": [{ "id": 9715, "name": "superhero" }, { "id": 179430, "name": "aftercreditsstinger" }], "espera": "Escena poscréditos" },
+    { "nombre": "solo durante", "palabras": [{ "id": 179431, "name": "duringcreditsstinger" }], "espera": "Escena durante los créditos" },
+    { "nombre": "las dos, en cualquier orden", "palabras": [{ "id": 179430, "name": "aftercreditsstinger" }, { "id": 9715, "name": "superhero" }, { "id": 179431, "name": "duringcreditsstinger" }], "espera": "Escenas durante y después de los créditos" },
+    { "nombre": "otras palabras, nada", "palabras": [{ "id": 9715, "name": "superhero" }], "espera": null },
+    { "nombre": "sin palabras, nada", "palabras": [], "espera": null },
+    { "nombre": "por el nombre si el id no cuadra", "palabras": [{ "id": 999999, "name": "aftercreditsstinger" }], "espera": "Escena poscréditos" }
+  ]
+}

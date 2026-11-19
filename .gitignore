@@ -1,0 +1,36 @@
+# Gradle, Kotlin y Android Studio
+.gradle/
+.kotlin/
+/build
+**/build/
+# …salvo el paquete de código que se llama «build»
+!app/src/**/java/**/core/build/
+!app/src/**/java/**/core/build/*.kt
+/captures
+.externalNativeBuild
+.cxx
+*.iml
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+
+# Secretos y firma: viven en %USERPROFILE%\.balootv (ver CLAUDE.md)
+local.properties
+local.dev.properties
+*.jks
+*.keystore
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Registros locales de Superpowers (planes en curso)
+.superpowers/
+
+# Herramienta heredada de NuvioTV para el perfil de referencia (sin adaptar)
+/scripts/perf_baseline.sh
+/.idea/

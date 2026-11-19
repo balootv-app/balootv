@@ -1,0 +1,267 @@
+{
+  "contrato": "C1 · semillas de «Porque viste» del día (diseño 2026-10-31)",
+  "casos": [
+    {
+      "nombre": "día 41 de la ventana entra y el 42 no",
+      "hoy": "2026-10-31",
+      "vistos": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 1,
+          "tmdb": 1001,
+          "vistoEn": "2026-09-20T10:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 2,
+          "tmdb": 1002,
+          "vistoEn": "2026-09-19T10:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 1
+        }
+      ]
+    },
+    {
+      "nombre": "medianoche: 00:30 de Madrid ya es el día siguiente",
+      "hoy": "2026-10-31",
+      "vistos": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 3,
+          "tmdb": 1003,
+          "vistoEn": "2026-09-19T22:30:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 4,
+          "tmdb": 1004,
+          "vistoEn": "2026-09-19T20:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 3
+        }
+      ]
+    },
+    {
+      "nombre": "sin nada en la ventana: los 5 más recientes",
+      "hoy": "2026-10-31",
+      "vistos": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 10,
+          "tmdb": 1010,
+          "vistoEn": "2026-05-11T12:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 11,
+          "tmdb": 1011,
+          "vistoEn": "2026-06-12T12:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 12,
+          "tmdb": 1012,
+          "vistoEn": "2026-06-13T12:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 13,
+          "tmdb": 1013,
+          "vistoEn": "2026-07-14T12:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 14,
+          "tmdb": 1014,
+          "vistoEn": "2026-07-15T12:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 15,
+          "tmdb": 1015,
+          "vistoEn": "2026-08-16T12:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 16,
+          "tmdb": 1016,
+          "vistoEn": "2026-08-17T12:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 12
+        }
+      ]
+    },
+    {
+      "nombre": "un solo candidato sale aunque fuera el de ayer",
+      "hoy": "2026-10-31",
+      "vistos": [
+        {
+          "tipo": "SERIE",
+          "trakt": 20,
+          "tmdb": 2020,
+          "vistoEn": "2026-10-30T21:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "SERIE",
+          "trakt": 20
+        }
+      ]
+    },
+    {
+      "nombre": "coincide con la de ayer: la siguiente",
+      "hoy": "2026-11-01",
+      "vistos": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 30,
+          "tmdb": 1030,
+          "vistoEn": "2026-10-29T21:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 31,
+          "tmdb": 1031,
+          "vistoEn": "2026-10-28T21:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 31
+        }
+      ]
+    },
+    {
+      "nombre": "tres series cambian de día a día (31-10)",
+      "hoy": "2026-10-31",
+      "vistos": [
+        {
+          "tipo": "SERIE",
+          "trakt": 40,
+          "tmdb": 2040,
+          "vistoEn": "2026-10-20T21:00:00Z"
+        },
+        {
+          "tipo": "SERIE",
+          "trakt": 41,
+          "tmdb": 2041,
+          "vistoEn": "2026-10-21T21:00:00Z"
+        },
+        {
+          "tipo": "SERIE",
+          "trakt": 42,
+          "tmdb": 2042,
+          "vistoEn": "2026-10-22T21:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "SERIE",
+          "trakt": 42
+        }
+      ]
+    },
+    {
+      "nombre": "tres series cambian de día a día (01-11, cambio de mes)",
+      "hoy": "2026-11-01",
+      "vistos": [
+        {
+          "tipo": "SERIE",
+          "trakt": 40,
+          "tmdb": 2040,
+          "vistoEn": "2026-10-20T21:00:00Z"
+        },
+        {
+          "tipo": "SERIE",
+          "trakt": 41,
+          "tmdb": 2041,
+          "vistoEn": "2026-10-21T21:00:00Z"
+        },
+        {
+          "tipo": "SERIE",
+          "trakt": 42,
+          "tmdb": 2042,
+          "vistoEn": "2026-10-22T21:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "SERIE",
+          "trakt": 40
+        }
+      ]
+    },
+    {
+      "nombre": "sin id de Trakt no entra",
+      "hoy": "2026-10-31",
+      "vistos": [
+        {
+          "tipo": "PELICULA",
+          "trakt": null,
+          "tmdb": 999,
+          "vistoEn": "2026-10-30T21:00:00Z"
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 50,
+          "tmdb": 1050,
+          "vistoEn": "2026-08-01T21:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 50
+        }
+      ]
+    },
+    {
+      "nombre": "película y serie: primero la vista más recientemente",
+      "hoy": "2026-10-31",
+      "vistos": [
+        {
+          "tipo": "PELICULA",
+          "trakt": 60,
+          "tmdb": 1060,
+          "vistoEn": "2026-10-20T21:00:00Z"
+        },
+        {
+          "tipo": "SERIE",
+          "trakt": 61,
+          "tmdb": 2061,
+          "vistoEn": "2026-10-25T21:00:00Z"
+        }
+      ],
+      "esperado": [
+        {
+          "tipo": "SERIE",
+          "trakt": 61
+        },
+        {
+          "tipo": "PELICULA",
+          "trakt": 60
+        }
+      ]
+    },
+    {
+      "nombre": "nada visto: ninguna semilla",
+      "hoy": "2026-10-31",
+      "vistos": [],
+      "esperado": []
+    }
+  ]
+}

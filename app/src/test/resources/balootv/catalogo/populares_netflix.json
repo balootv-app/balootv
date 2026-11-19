@@ -1,0 +1,425 @@
+{
+ "page": 1,
+ "results": [
+  {
+   "adult": false,
+   "backdrop_path": "/tzoarEu7TsG959upiELyYPm5kO9.jpg",
+   "genre_ids": [
+    53,
+    18
+   ],
+   "id": 1236045,
+   "title": "Animales",
+   "original_language": "en",
+   "original_title": "Animals",
+   "overview": "El secuestro de su hijo obliga a un candidato a la alcaldía de Los Ángeles y a su mujer a reunir el dinero del rescate y a tomar decisiones que podrían destruir sus vidas.",
+   "popularity": 178.5958,
+   "poster_path": "/hhycOr6ji35RMGHnstHN4UKAvR4.jpg",
+   "release_date": "2026-10-09",
+   "softcore": false,
+   "video": false,
+   "vote_average": 6.998,
+   "vote_count": 533
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/faJB8DXU0LXwq5ebMLj5drz8S4N.jpg",
+   "genre_ids": [
+    80,
+    53
+   ],
+   "id": 1389172,
+   "title": "En directo",
+   "original_language": "hi",
+   "original_title": "रिपोर्टिंग लाइव",
+   "overview": "Una reportera joven y su reticente cámara buscan una historia... y acaban formando parte de una red de extracción ilegal de arena dirigida por una despiadada organización mafiosa.",
+   "popularity": 89.9675,
+   "poster_path": "/4MQDsOft2xkNxTpOHvULBwKFbbn.jpg",
+   "release_date": "2026-10-09",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.1,
+   "vote_count": 7
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg",
+   "genre_ids": [
+    18,
+    36,
+    10752
+   ],
+   "id": 872585,
+   "title": "Oppenheimer",
+   "original_language": "en",
+   "original_title": "Oppenheimer",
+   "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
+   "popularity": 66.8936,
+   "poster_path": "/mJRUREPjTqqMEKwEiM2sdmIGngz.jpg",
+   "release_date": "2023-07-19",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.022,
+   "vote_count": 12736
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
+   "genre_ids": [
+    10751,
+    35,
+    12,
+    14,
+    16
+   ],
+   "id": 502356,
+   "title": "Super Mario Bros: La película",
+   "original_language": "en",
+   "original_title": "The Super Mario Bros. Movie",
+   "overview": "Mientras trabajan en una avería subterránea, los fontaneros de Brooklyn, Mario y su hermano Luigi, viajan por una misteriosa tubería hasta un nuevo mundo mágico. Pero, cuando los hermanos se separan, Mario deberá emprender una épica misión para encontrar a Luigi. Con la ayuda del champiñón local Toad y unas cuantas nociones de combate de la guerrera líder del Reino Champiñón, la princesa Peach, Mario descubre todo el poder que alberga en su interior.",
+   "popularity": 54.0363,
+   "poster_path": "/4CDkQMpNDTtVKwS0BBZw5RIXDtY.jpg",
+   "release_date": "2023-04-05",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.587,
+   "vote_count": 11245
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/dyJvKsNs2KP8qQnAXbRwDjblViy.jpg",
+   "genre_ids": [
+    16,
+    10751,
+    14
+   ],
+   "id": 129,
+   "title": "El viaje de Chihiro",
+   "original_language": "ja",
+   "original_title": "千と千尋の神隠し",
+   "overview": "Durante el traslado de su familia a los suburbios, una niña de 10 años de edad deambula por un mundo gobernado por dioses, brujas y espíritus, y donde los humanos se convierten en bestias.",
+   "popularity": 45.2376,
+   "poster_path": "/2RcxjDykOssx4SfqshewyI9vfSl.jpg",
+   "release_date": "2001-07-20",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.536,
+   "vote_count": 19084
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/ejdD20cdHNFAYAN2DlqPToXKyzx.jpg",
+   "genre_ids": [
+    18,
+    80
+   ],
+   "id": 238,
+   "title": "El padrino",
+   "original_language": "en",
+   "original_title": "The Godfather",
+   "overview": "Don Vito Corleone, conocido dentro de los círculos del hampa como \"El Padrino\", es el patriarca de una de las cinco familias que ejercen el mando de la Cosa Nostra en Nueva York (Estados Unidos) durante la década de 1940. Don Corleone tiene cuatro hijos: una chica, Connie, y tres varones; Sonny, Michael y Fredo. Cuando Vito reclina intervenir en el negocio de estupefacientes, empieza una cruenta lucha de violentos episodios entre las distintas familias del crimen organizado.",
+   "popularity": 58.8474,
+   "poster_path": "/5HlLUsmsv60cZVTzVns9ICZD6zU.jpg",
+   "release_date": "1972-03-14",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.689,
+   "vote_count": 23808
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/nAxGnGHOsfzufThz20zgmRwKur3.jpg",
+   "genre_ids": [
+    27,
+    28,
+    53
+   ],
+   "id": 1233413,
+   "title": "Los pecadores",
+   "original_language": "en",
+   "original_title": "Sinners",
+   "overview": "Tratando de dejar atrás sus problemáticas vidas, dos hermanos gemelos regresan a su pueblo natal para empezar de nuevo, solo para descubrir que un mal aún mayor les espera para darles la bienvenida.",
+   "popularity": 59.2475,
+   "poster_path": "/zdClwqpYQXBSCGGDMdtvsuggwec.jpg",
+   "release_date": "2025-04-16",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.513,
+   "vote_count": 5389
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+   "genre_ids": [
+    28,
+    53,
+    80
+   ],
+   "id": 155,
+   "title": "El caballero oscuro",
+   "original_language": "en",
+   "original_title": "The Dark Knight",
+   "overview": "Batman/Bruce Wayne regresa para continuar su guerra contra el crimen. Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato demuestra su eficacia, pero, de repente, aparece Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.",
+   "popularity": 55.673,
+   "poster_path": "/8QDQExnfNFOtabLDKqfDQuHDsIg.jpg",
+   "release_date": "2008-07-16",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.538,
+   "vote_count": 37029
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+   "genre_ids": [
+    16,
+    28,
+    14
+   ],
+   "id": 1311031,
+   "title": "Guardianes de la noche: Kimetsu no Yaiba La fortaleza infinita",
+   "original_language": "ja",
+   "original_title": "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
+   "overview": "El Cuerpo de Cazadores de Demonios se enfrenta a los Doce Kizuki restantes antes de enfrentarse a Muzan en el Castillo del Infinito para derrotarlo de una vez por todas.",
+   "popularity": 50.989,
+   "poster_path": "/lYnhd124Fi3vVYlh6qmItxpGZXd.jpg",
+   "release_date": "2025-07-18",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.802,
+   "vote_count": 2318
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/nv5wwZou159v5OC61i4ElR7OqyY.jpg",
+   "genre_ids": [
+    14,
+    16,
+    12
+   ],
+   "id": 4935,
+   "title": "El castillo ambulante",
+   "original_language": "ja",
+   "original_title": "ハウルの動く城",
+   "overview": "Sophie, una joven sobre la que pesa una horrible maldición que le confiere el aspecto de una anciana, decide pedir ayuda al mago Howl, que vive en un castillo ambulante, pero tal vez sea Howl quien necesite la ayuda de Sophie.",
+   "popularity": 54.4861,
+   "poster_path": "/p8EARnEw8KPZzlZg3vkseYVMczu.jpg",
+   "release_date": "2004-09-09",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.39,
+   "vote_count": 11590
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/zN5mRDu6jOYt5EJGYGjhWgOGwor.jpg",
+   "genre_ids": [
+    35,
+    18
+   ],
+   "id": 1623256,
+   "title": "La tormenta",
+   "original_language": "sv",
+   "original_title": "Stormen",
+   "overview": "Filip celebra sus 45 años invitando a su círculo de amigos a cenar en la lujosa finca que acaba de comprar junto a su mujer, situada en el norte de Suecia. Allí se desata una tormenta feroz e inesperada que deja a los invitados completamente atrapados en el interior.",
+   "popularity": 47.0098,
+   "poster_path": "/7hzCmg7a8nb2K3VQtm36E1YehnH.jpg",
+   "release_date": "2026-10-15",
+   "softcore": false,
+   "video": false,
+   "vote_average": 6.34,
+   "vote_count": 47
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/zMwhWailP1WY7sb6AoE6b8ugoy.jpg",
+   "genre_ids": [
+    12,
+    16,
+    10751,
+    14
+   ],
+   "id": 1007757,
+   "title": "Intercambiados",
+   "original_language": "en",
+   "original_title": "Swapped",
+   "overview": "Una pequeña criatura del bosque intercambia el cuerpo con un majestuoso pájaro del valle, lo que los obliga a colaborar para sobrevivir a la aventura más salvaje de sus vidas.",
+   "popularity": 47.4998,
+   "poster_path": "/i89vUDwNhAEWUZSFYITSiv1RIbK.jpg",
+   "release_date": "2026-05-01",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.847,
+   "vote_count": 2264
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/hlxduUs8y9icWGMzYCDLcYHEQ2u.jpg",
+   "genre_ids": [
+    53
+   ],
+   "id": 985939,
+   "title": "Fall",
+   "original_language": "en",
+   "original_title": "Fall",
+   "overview": "Para las mejores amigas Becky y Hunter, la vida trata de superar tus miedos y empujar tus límites. Sin embargo, después de subir hasta la cima de una torre de comunicaciones abandonada, se encuentran atrapadas y sin forma de bajar. A 600 metros del suelo y totalmente alejadas de la civilización, las chicas pondrán a prueba sus habilidades de escaladoras expertas y lucharán desesperadamente por sobrevivir aunque lo tengan todo en contra. ¿Lo conseguirán?",
+   "popularity": 45.6773,
+   "poster_path": "/aOidBN8Ch4LD6M9HyvDjTqM9fLF.jpg",
+   "release_date": "2022-08-11",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.155,
+   "vote_count": 5014
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/nuO8o9ltxhI7AZQxePavEZ4TyHa.jpg",
+   "genre_ids": [
+    28,
+    80,
+    18
+   ],
+   "id": 2034,
+   "title": "Training Day (Día de entrenamiento)",
+   "original_language": "en",
+   "original_title": "Training Day",
+   "overview": "Todos los días, en las calles de las zonas urbanas deprimidas de los Estados Unidos se libra una guerra; una guerra entre residentes, traficantes de droga y los que han jurado proteger a unos de los otros. Esta guerra tiene sus víctimas y sus verdugos, y una de sus figuras más importantes es el sargento Alonzo Harris, un agente de narcóticos con 13 años de experiencia cuyos discutibles métodos hacen difusa la línea entre la legalidad y la corrupción. Jake Hoyt, un joven policía recién asignado a narcóticos, comienza sus rondas a las órdenes de Alonzo para aprender de él.",
+   "popularity": 47.9712,
+   "poster_path": "/nagh5PjkfBnDf5SKXyHupWu4yod.jpg",
+   "release_date": "2001-10-05",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.534,
+   "vote_count": 6936
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+   "genre_ids": [
+    10751,
+    14,
+    35,
+    12
+   ],
+   "id": 950387,
+   "title": "Una película de Minecraft",
+   "original_language": "en",
+   "original_title": "A Minecraft Movie",
+   "overview": "Cuatro inadaptados se encuentran luchando con problemas ordinarios cuando de repente se ven arrastrados a través de un misterioso portal al Mundo Exterior: un extraño país de las maravillas cúbico que se nutre de la imaginación. Para volver a casa, tendrán que dominar este mundo mientras se embarcan en una búsqueda mágica con un inesperado experto artesano, Steve.",
+   "popularity": 43.7961,
+   "poster_path": "/mFjtmmh4RtK9tLv1aPnUsl6st3m.jpg",
+   "release_date": "2025-03-31",
+   "softcore": false,
+   "video": false,
+   "vote_average": 6.203,
+   "vote_count": 3385
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/di47xqYMCYpjqwnqNlO17X5qXMX.jpg",
+   "genre_ids": [
+    35,
+    80
+   ],
+   "id": 12153,
+   "title": "Dos rubias de pelo en pecho",
+   "original_language": "en",
+   "original_title": "White Chicks",
+   "overview": "Dos ambiciosos -pero con poca fortuna- agentes del FBI (Shawn y Marlon Wayans) se hacen pasar por mujeres, novatas en la alta sociedad, en el exclusivo complejo Hamptons para investigar un círculo de secuestros. Pero mientras preparan su actuación en el mayor acontecimiento social del año se encuentran que irrumpir en la alta sociedad es mucho más duro de lo que parecía.",
+   "popularity": 37.1824,
+   "poster_path": "/sgg5mR2Iz6QV4eWkqGrTgxOERaH.jpg",
+   "release_date": "2004-06-23",
+   "softcore": false,
+   "video": false,
+   "vote_average": 6.968,
+   "vote_count": 4817
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg",
+   "genre_ids": [
+    878,
+    28,
+    12
+   ],
+   "id": 912649,
+   "title": "Venom: El último baile",
+   "original_language": "en",
+   "original_title": "Venom: The Last Dance",
+   "overview": "Eddie y Venom están a la fuga. Perseguidos por sus sendos mundos y cada vez más cercados, el dúo se ve abocado a tomar una decisión devastadora que hará que caiga el telón sobre el último baile de Venom y Eddie.",
+   "popularity": 42.1038,
+   "poster_path": "/toZiAd0n0NKhiuHTiGk7kBMmhtG.jpg",
+   "release_date": "2024-10-22",
+   "softcore": false,
+   "video": false,
+   "vote_average": 6.668,
+   "vote_count": 4622
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/yRBc6WY3r1Fz5Cjd6DhSvzqunED.jpg",
+   "genre_ids": [
+    878,
+    12,
+    28
+   ],
+   "id": 1061474,
+   "title": "Superman",
+   "original_language": "en",
+   "original_title": "Superman",
+   "overview": "En un mundo que ha perdido la fe en la bondad, Superman lucha por reconciliar su herencia kryptoniana con los valores humanos que moldearon su carácter. Criado en la Tierra, representa la verdad, la justicia y el estilo americano, pero debe enfrentarse a un mundo cínico que cuestiona sus ideales. Entre el deber de proteger a la humanidad y la búsqueda de su identidad, Superman demuestra que la esperanza y la bondad nunca pasan de moda, incluso en los tiempos más oscuros, inspirando a otros a creer en un futuro mejor.",
+   "popularity": 39.5099,
+   "poster_path": "/fvUJb08yatV2b3NUSwuYdQKYoFd.jpg",
+   "release_date": "2025-07-09",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.322,
+   "vote_count": 5634
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+   "genre_ids": [
+    28,
+    878,
+    12
+   ],
+   "id": 1726,
+   "title": "Iron Man",
+   "original_language": "en",
+   "original_title": "Iron Man",
+   "overview": "El multimillonario fabricante de armas Tony Stark debe enfrentarse a su turbio pasado después de sufrir un accidente con una de sus armas. Equipado con una armadura de última generación tecnológica, se convierte en 'El hombre de hierro' para combatir el mal a escala global.",
+   "popularity": 39.5004,
+   "poster_path": "/bFj7XRg5avQDvuvWaag3IttjEAw.jpg",
+   "release_date": "2008-04-30",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.667,
+   "vote_count": 29036
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/w3Bi0wygeFQctn6AqFTwhGNXRwL.jpg",
+   "genre_ids": [
+    14,
+    10402,
+    35,
+    16
+   ],
+   "id": 803796,
+   "title": "Las guerreras k-pop",
+   "original_language": "en",
+   "original_title": "KPop Demon Hunters",
+   "overview": "Cuando no están llenando estadios, las superestrellas del K-pop Rumi, Mira y Zoey usan sus poderes secretos para proteger a sus fans de una amenaza sobrenatural.",
+   "popularity": 38.6358,
+   "poster_path": "/6EQMqEmdG5HoGe2zT1WwWUMvVhv.jpg",
+   "release_date": "2025-06-20",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.979,
+   "vote_count": 3306
+  }
+ ],
+ "total_pages": 334,
+ "total_results": 6673
+}

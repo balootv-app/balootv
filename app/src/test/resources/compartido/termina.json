@@ -1,0 +1,15 @@
+{
+  "contrato": "C4 · Termina a las (ficha). Hora de Madrid en H:mm; fin = ahora + minutos, quitando los segundos sin redondear. Sin empezar: «{duración} · termina a las H:mm». Empezado: «Quedan {resto} · termina a las H:mm» («Queda 1 min» con 1), con 0 «Queda menos de un minuto». Duración «45 min», «1 h 5 min», «2 h». Sin duración ni resto: null.",
+  "casos": [
+    { "nombre": "película sin empezar", "duracionMin": 115, "restanteMin": null, "ahora": "21:23:40", "espera": "1 h 55 min · termina a las 23:18" },
+    { "nombre": "hora justa, sin «0 min»", "duracionMin": 120, "restanteMin": null, "ahora": "21:23:00", "espera": "2 h · termina a las 23:23" },
+    { "nombre": "menos de una hora y pasa de medianoche", "duracionMin": 45, "restanteMin": null, "ahora": "23:40:00", "espera": "45 min · termina a las 0:25" },
+    { "nombre": "larga que acaba de madrugada", "duracionMin": 115, "restanteMin": null, "ahora": "23:40:00", "espera": "1 h 55 min · termina a las 1:35" },
+    { "nombre": "empezada", "duracionMin": 115, "restanteMin": 34, "ahora": "21:23:00", "espera": "Quedan 34 min · termina a las 21:57" },
+    { "nombre": "empezada, resto con horas y segundos fuera sin redondear", "duracionMin": 120, "restanteMin": 65, "ahora": "22:13:50", "espera": "Quedan 1 h 5 min · termina a las 23:18" },
+    { "nombre": "empezada con un minuto, en singular", "duracionMin": 115, "restanteMin": 1, "ahora": "21:23:00", "espera": "Queda 1 min · termina a las 21:24" },
+    { "nombre": "empezada y casi acabada", "duracionMin": 115, "restanteMin": 0, "ahora": "21:23:00", "espera": "Queda menos de un minuto" },
+    { "nombre": "empezada sin duración conocida", "duracionMin": null, "restanteMin": 20, "ahora": "21:23:00", "espera": "Quedan 20 min · termina a las 21:43" },
+    { "nombre": "sin duración ni resto", "duracionMin": null, "restanteMin": null, "ahora": "21:23:00", "espera": null }
+  ]
+}

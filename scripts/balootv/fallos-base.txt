@@ -1,0 +1,12 @@
+DefaultDataSourceRoutingTest > testRoutingToLocalhostZeroCopyWhenEnabled
+LocalhostZeroCopyDataSourceTest > testCaseInsensitiveContentLengthAndPartialContent
+LocalhostZeroCopyDataSourceTest > testExcessBytesHandling
+LocalhostZeroCopyDataSourceTest > testHttpError404
+LocalhostZeroCopyDataSourceTest > testOpenAndReadZeroCopy
+NoDelaySocketFactoryTest > okhttp connection socket has no delay
+RendimientoSelectorTest > una eleccion con 690 enlaces reales tarda menos de 30 ms
+SubtitleCredentialScopeTest > a redirect chain through http on the stream's host drops the headers only on the http hop
+SubtitleCredentialScopeTest > a redirect to a host failing hostname verification is retried without credentials
+SubtitleCredentialScopeTest > a redirect within the same https host keeps stream and subtitle credentials
+TraktAuthServiceTest > refresh token 400 clears credentials and prevents another refresh
+TraktProgressServiceRefreshTest > change seen by a cancelled refresh is fetched by the next poll

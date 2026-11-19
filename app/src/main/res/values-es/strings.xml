@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BalooTV</string>
+    <string name="type_movie">Película</string>
+    <string name="type_series">Series</string>
+
+    <string name="action_retry">Reintentar</string>
+    <string name="error_meta_not_found">Metadatos no encontrados</string>
+    <string name="error_meta_no_supported_addon">Ningún complemento instalado admite metadatos para \"%1$s\".</string>
+    <string name="error_meta_no_addon_for_id">Ningún complemento instalado pudo proporcionar metadatos para id=%1$s (tipo=%2$s).</string>
+    <string name="error_meta_tried_none">Complementos de metadatos probados: %1$s. Ninguno de ellos proporcionó metadatos para id=%2$s (tipo=%3$s).</string>
+    <string name="error_meta_tried_generic">Complementos de metadatos probados: %1$s. No se pudo cargar metadatos para id=%2$s (tipo=%3$s).</string>
+    <string name="error_meta_tried_issues">Complementos de metadatos probados: %1$s. No se pudo cargar metadatos para id=%2$s (tipo=%3$s). Problemas: %4$s.</string>
+    <string name="error_stream_no_supported_addon">Ningún complemento instalado admite transmisiones para \"%1$s\".</string>
+    <string name="error_stream_tried_none">Complementos de transmisión probados: %1$s. Ninguno de ellos devolvió transmisiones para id=%2$s (tipo=%3$s).</string>
+    <string name="error_stream_tried_generic">Complementos de transmisión probados: %1$s. No se pudo cargar transmisiones para id=%2$s (tipo=%3$s).</string>
+    <string name="error_stream_tried_issues">Complementos de transmisión probados: %1$s. No se pudo cargar transmisiones para id=%2$s (tipo=%3$s). Problemas: %4$s.</string>
+
+    <string name="continue_watching">Continuar viendo</string>
+    <string name="cw_upcoming">Próximamente</string>
+    <string name="cw_next_up">Siguiente</string>
+    <string name="cw_next_up_short">Siguiente</string>
+    <string name="cw_new_episode">Nuevo episodio</string>
+    <string name="cw_new_episode_short">Nuevo</string>
+    <string name="cw_new_season">Nueva temporada</string>
+    <string name="cw_resume">Reanudar</string>
+    <string name="cw_percent_watched">%1$d%% visto</string>
+    <string name="cw_hours_min_left">%1$dh %2$dm restantes</string>
+    <string name="cw_min_left">%1$dm restantes</string>
+    <string name="cw_airs_date">Se transmite %1$s</string>
+    <string name="cw_airs_today">Se transmite hoy</string>
+    <string name="cw_airs_tomorrow">Se transmite mañana</string>
+    <plurals name="cw_airs_in_days">
+        <item quantity="one">Se transmite dentro de %d día</item>
+        <item quantity="many">Se transmite dentro de %d días</item>
+        <item quantity="other">Se transmite dentro de %d días</item>
+    </plurals>
+    <!-- Short versions for compact card styles (wide/poster) -->
+    <string name="cw_airs_date_short">%1$s</string>
+    <string name="cw_airs_today_short">Hoy</string>
+    <string name="cw_airs_tomorrow_short">Mañana</string>
+    <plurals name="cw_airs_in_days_short">
+        <item quantity="one">En %d día</item>
+        <item quantity="many">En %d días</item>
+        <item quantity="other">En %d días</item>
+    </plurals>
+    <string name="cw_action_go_to_details">Ir a detalles</string>
+    <string name="cw_action_start_from_beginning">Empezar desde el principio</string>
+    <string name="cw_action_remove">Eliminar</string>
+    <string name="cw_dialog_subtitle">Elige qué hacer con este elemento.</string>
+    <string name="home_poster_dialog_subtitle">Acciones del título</string>
+
+    <string name="hero_play">Reproducir</string>
+    <string name="hero_add_to_library">Añadir a biblioteca</string>
+    <string name="hero_remove_from_library">Eliminar de biblioteca</string>
+    <string name="hero_mark_watched">Marcar como visto</string>
+    <string name="hero_mark_unwatched">Marcar como no visto</string>
+    <string name="hero_synopsis_read_more">Leer más</string>
+    <string name="hero_synopsis_dismiss_hint">Presiona atrás para cerrar</string>
+
+    <string name="episodes_season">Temporada %1$d</string>
+    <string name="episodes_specials">Especiales</string>
+    <string name="episodes_episode">Episodio</string>
+    <string name="episodes_cd_watched">Visto</string>
+    <string name="episodes_dialog_subtitle">Acciones del episodio</string>
+    <string name="episodes_mark_watched">Marcar como visto</string>
+    <string name="episodes_mark_unwatched">Marcar como no visto</string>
+    <string name="episodes_mark_season_watched">Marcar temporada como vista</string>
+    <string name="episodes_mark_season_unwatched">Marcar temporada como no vista</string>
+    <string name="episodes_mark_previous_watched">Marcar anteriores en esta temporada como visto</string>
+    <string name="episodes_play">Reproducir</string>
+    <string name="episodes_open_comments">Abrir comentarios del episodio</string>
+    <string name="play_manually">Reproducir manualmente</string>
+
+    <string name="detail_added_to_library">Añadido a la biblioteca</string>
+    <string name="detail_removed_from_library">Eliminado de la biblioteca</string>
+    <string name="detail_episode_marked_watched">Episodio marcado como visto</string>
+    <string name="detail_episode_marked_unwatched">Episodio marcado como no visto</string>
+
+    <string name="playback_unavailable">Reproducción no disponible</string>
+    <string name="playback_unavailable_message">No se puede reproducir este título ahora mismo. Prueba con Cambiar fuente.</string>
+    <string name="detail_btn_play">Reproducir</string>
+    <string name="detail_btn_resume">Reanudar</string>
+    <string name="detail_btn_play_episode">Reproducir T%1$d E%2$d</string>
+    <string name="detail_btn_resume_episode">Reanudar T%1$d E%2$d</string>
+    <string name="detail_btn_next_episode">Siguiente T%1$d E%2$d</string>
+    <string name="detail_comments_error">No se pudieron cargar las reseñas de Trakt en este momento.</string>
+    <!-- Status labels for movies (allows gendered translations in languages that need it) -->
+    <string name="detail_lists_subtitle">Selecciona qué listas deben incluir este título.</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_saving">Guardando…</string>
+
+    <string name="cd_selected">Seleccionado</string>
+
+    <!-- SettingsScreen categories -->
+    <string name="settings_tracking_title">Seguimiento</string>
+    <string name="settings_tracking_description">Conecta proveedores de seguimiento y elige cuál impulsa tu Biblioteca y Continuar viendo.</string>
+    <string name="tracking_accounts_title">Cuentas</string>
+    <string name="tracking_accounts_subtitle">Conecta y administra servicios de seguimiento</string>
+    <string name="tracking_sources_title">Fuentes</string>
+    <string name="tracking_sources_subtitle">Elige de dónde lee BalooTV tu biblioteca y tu progreso de visualización. La reproducción hace scrobbling en todos los servicios conectados.</string>
+    <string name="tracking_trakt_features_title">Funciones de Trakt</string>
+    <string name="tracking_trakt_features_subtitle">Historial, reseñas y recomendaciones específicas de Trakt</string>
+    <string name="tracking_status_connected">Conectado</string>
+    <string name="tracking_status_disconnected">No conectado</string>
+    <string name="tracking_status_waiting">Esperando aprobación</string>
+    <string name="tracking_status_connecting">Conectando</string>
+    <string name="tracking_finish_connection">Finalizar aprobación de conexión</string>
+    <string name="tracking_connecting_provider">Iniciando conexión con %1$s…</string>
+    <string name="tracking_watch_progress_dialog_subtitle">Elige el servicio que BalooTV usa para reanudar y Continuar viendo. El scrobbling permanece activo en todos los servicios conectados.</string>
+    <string name="tracking_library_source_dialog_subtitle">Elige el servicio que BalooTV lee para tu Biblioteca. La reproducción hace scrobbling en todos los servicios conectados.</string>
+    <string name="tracking_trakt_progress_required">Disponible cuando Trakt es la fuente de progreso de visualización</string>
+    <string name="trakt_name">Trakt</string>
+    <string name="external_auto_next_loading">Cargando siguiente episodio…</string>
+    <!-- Account / sign-in error messages -->
+    <string name="confirm_exit_toast">Presiona atrás de nuevo para salir</string>
+
+    <string name="action_cancel">Cancelar</string>
+
+    <string name="playback_engine_exoplayer">ExoPlayer</string>
+    <string name="playback_engine_mvplayer">Libmpv (Beta)</string>
+    <string name="playback_player_auto">Automático (Mejor para el contenido)</string>
+
+    <!-- DV7 Handling Mode -->
+
+
+    <string name="upcoming_section_title">Próximamente</string>
+
+    <!-- Debrid stream filter dialogs (per-resolution / quality / size / multi-choice pickers) -->
+
+    <string name="streams_size">TAMAÑO %1$s</string>
+
+    <!-- Anime-Skip -->
+
+    <string name="tmdb_details_title">Detalles</string>
+
+    <string name="trakt_description">Sincroniza tu lista de deseos, progreso de visualización, continuar viendo, scrobbles y listas personales con Trakt.</string>
+    <string name="trakt_connected_as">Conectado como %1$s</string>
+    <string name="trakt_awaiting_instruction">Ve a trakt.tv/activate e introduce este código:</string>
+    <string name="trakt_waiting_approval">Esperando aprobación…</string>
+    <string name="trakt_code_expires">El código caduca en %1$s</string>
+    <string name="trakt_token_refreshes">El token de acceso de Trakt se actualiza en %1$s</string>
+    <string name="trakt_missing_credentials">Falta TRAKT_CLIENT_ID / TRAKT_CLIENT_SECRET en local.properties.</string>
+    <string name="trakt_watch_progress_title">Progreso de visualización</string>
+    <string name="trakt_watch_progress_subtitle">Elige qué fuente de progreso impulsa la reanudación y continuar viendo</string>
+    <string name="trakt_watch_progress_dialog_title">Progreso de visualización</string>
+    <string name="trakt_watch_progress_source_nuvio">BalooTV Sync</string>
+    <string name="trakt_library_source_title">Fuente de biblioteca</string>
+    <string name="trakt_library_source_subtitle">Elige de qué fuente lee BalooTV tu biblioteca</string>
+    <string name="trakt_library_source_dialog_title">Fuente de biblioteca</string>
+    <string name="trakt_library_source_nuvio">Biblioteca de BalooTV</string>
+    <string name="trakt_continue_watching_window">Ventana de continuar viendo</string>
+    <string name="trakt_continue_watching_subtitle">Historial de Trakt considerado para continuar viendo</string>
+    <string name="trakt_comments_title">Comentarios</string>
+    <string name="trakt_comments_subtitle">Mostrar reseñas de Trakt en páginas de metadatos</string>
+    <string name="trakt_comments_now_shown">Las reseñas de Trakt en las páginas de metadatos ahora se muestran</string>
+    <string name="trakt_comments_now_hidden">Las reseñas de Trakt en las páginas de metadatos ahora están ocultas</string>
+    <string name="trakt_more_like_this_source_title">Fuente de Más como esto</string>
+    <string name="trakt_more_like_this_source_subtitle">Elige de dónde provienen las recomendaciones en las pantallas de detalles y posreproducción</string>
+    <string name="trakt_more_like_this_source_dialog_title">Fuente de Más como esto</string>
+    <string name="trakt_more_like_this_source_dialog_subtitle">Selecciona la fuente de las recomendaciones que se muestran en las pantallas de detalles y posreproducción.</string>
+    <string name="trakt_more_like_this_source_trakt">Trakt</string>
+    <string name="trakt_more_like_this_source_tmdb">TMDB</string>
+    <string name="trakt_cached_label">En caché</string>
+    <string name="trakt_stat_movies">Películas</string>
+    <string name="trakt_stat_shows">Series</string>
+    <string name="trakt_stat_episodes">Episodios</string>
+    <string name="trakt_stat_watched_hours">Horas vistas</string>
+    <string name="trakt_disconnect">Desconectar</string>
+    <string name="trakt_disconnect_title">¿Desconectar Trakt?</string>
+    <string name="trakt_disconnect_subtitle">Esto desconectará tu cuenta de Trakt de BalooTV.</string>
+    <string name="trakt_cw_window_title">Ventana de continuar viendo</string>
+    <string name="trakt_cw_window_subtitle">Elige cuánta actividad de Trakt debe aparecer en continuar viendo.</string>
+    <string name="trakt_all_history">Todo el historial</string>
+    <string name="trakt_days_format">%1$d días</string>
+
+
+    <!-- AddonManagerScreen -->
+
+    <string name="stream_finding_source">Buscando fuente de transmisión</string>
+    <string name="debrid_resolving_stream">Preparando el enlace en TorBox…</string>
+    <string name="debrid_stale_stream">Este enlace ha caducado. Busco otros.</string>
+    <string name="debrid_missing_api_key">Falta la clave de TorBox. Revisa TorBox en Ajustes.</string>
+    <string name="debrid_not_cached">TorBox aún no tiene este fichero. Elige otra fuente o prueba dentro de unos minutos.</string>
+    <string name="debrid_resolution_failed">TorBox no ha podido preparar este enlace. Elige otra fuente; si pasa con todas, mira TorBox en Ajustes.</string>
+    <string name="stream_player_picker_title">¿Qué reproductor debería usarse?</string>
+    <string name="stream_player_internal">Interno</string>
+    <string name="stream_player_external">Externo</string>
+    <string name="stream_filter_all">Todos</string>
+
+    <string name="player_no_external_player">No se encontró reproductor externo</string>
+    <string name="player_loading_preparing">Preparando transmisión…</string>
+    <string name="player_loading_detecting_format">Detectando formato de transmisión…</string>
+    <string name="external_player_loading_skip_segments">Cargando segmentos de introducción y créditos…</string>
+    <string name="player_loading_subtitles_from">Obteniendo subtítulos de %1$d complementos…</string>
+    <string name="player_loading_subtitles_progress">Obteniendo subtítulos… (%1$d / %2$d)</string>
+    <string name="player_loading_subtitles_addon">Subtítulos: %1$s (%2$d / %3$d)</string>
+    <string name="player_loading_building">Construyendo reproductor…</string>
+    <string name="player_loading_starting">Iniciando transmisión…</string>
+    <string name="player_loading_buffering">Almacenando en búfer…</string>
+    <string name="player_engine_switching_title">Cambiando motor de reproducción</string>
+    <string name="player_engine_switching_message">Error al iniciar. Cambiando a %1$s…</string>
+    <string name="player_engine_switching_manual_message">Cambiando a %1$s...</string>
+
+    <!-- ParentalGuideOverlay -->
+    <string name="parental_nudity">Desnudez</string>
+    <string name="parental_violence">Violencia</string>
+    <string name="parental_profanity">Lenguaje soez</string>
+    <string name="parental_alcohol">Alcohol/drogas</string>
+    <string name="parental_frightening">Terror</string>
+    <string name="parental_severity_severe">Severo</string>
+    <string name="parental_severity_moderate">Moderado</string>
+    <string name="parental_severity_mild">Leve</string>
+    <!-- Season/episode code shown in player UI (e.g. S01E02). %1$d = season, %2$d = episode. -->
+    <string name="season_episode_format">S%1$d E%2$d</string>
+    <string name="player_error_title">Error de reproducción</string>
+    <string name="player_go_back">Volver</string>
+    <string name="player_switch_to_mpv">Cambiar a reproductor MPV</string>
+    <string name="player_speed_title">Velocidad de reproducción</string>
+    <string name="player_error_no_stream_url">No se proporcionó ninguna URL de transmisión</string>
+
+    <string name="stream_info_section_source">FUENTE</string>
+    <string name="stream_info_section_file">ARCHIVO</string>
+    <string name="stream_info_section_video">VÍDEO</string>
+    <string name="stream_info_section_audio">AUDIO</string>
+    <string name="stream_info_section_subtitle">SUBTÍTULO</string>
+    <string name="stream_info_filename">Nombre de archivo</string>
+    <string name="stream_info_size">Tamaño</string>
+    <string name="stream_info_codec">Códec</string>
+    <string name="stream_info_resolution">Resolución</string>
+    <string name="stream_info_frame_rate">Velocidad de fotogramas</string>
+    <string name="stream_info_bitrate">Velocidad de bits</string>
+    <string name="stream_info_bitrate_file">Velocidad de bits (archivo)</string>
+    <string name="stream_info_hud">HUD</string>
+    <string name="stream_info_channels">Canales</string>
+    <string name="stream_info_sample_rate">Frecuencia de muestreo</string>
+    <string name="stream_info_language">Idioma</string>
+    <string name="stream_info_name">Nombre</string>
+    <string name="stream_info_source">Fuente</string>
+    <string name="stream_info_subtitle_source_addon">Complemento</string>
+    <string name="stream_info_subtitle_source_embedded">Integrado</string>
+    <string name="stream_info_player_engine">Motor de reproducción</string>
+
+    <string name="sources_playing">Reproduciendo</string>
+
+    <string name="episodes_panel_close">Cerrar</string>
+    <string name="episodes_panel_back">Atrás</string>
+    <string name="episodes_panel_no_streams">No se encontraron transmisiones</string>
+    <string name="episodes_panel_no_episodes">No hay episodios disponibles</string>
+    <string name="episodes_panel_title">Episodios</string>
+    <string name="episodes_panel_streams_title">Transmisiones</string>
+    <string name="player_speed_normal">Normal</string>
+    <string name="player_aspect_fit">Ajustar (Original)</string>
+    <string name="player_aspect_stretch">Estirar</string>
+    <string name="player_aspect_fit_width">Ajustar ancho</string>
+    <string name="player_aspect_fit_height">Ajustar alto</string>
+    <string name="player_aspect_crop">Recortar</string>
+    <string name="player_aspect_tunneling_unavailable">No disponible durante la reproducción en túnel</string>
+    <string name="player_aspect_mode_slight_zoom">Zoom ligero</string>
+    <string name="player_aspect_mode_cinema_zoom">Zoom de cine</string>
+
+    <string name="subtitle_loading_addon">Cargando subtítulos de complementos\u2026</string>
+
+    <!-- PostPlayOverlay -->
+    <string name="next_episode_label">Siguiente episodio</string>
+    <string name="player_next_episode_prompt_title">¿Continuar viendo?</string>
+    <string name="player_next_episode_prompt_message">¿Quieres reproducir el siguiente episodio?</string>
+    <string name="player_next_episode_prompt_yes">Sí</string>
+    <string name="player_next_episode_prompt_no">No, volver a detalles</string>
+    <string name="player_post_play_because">Porque viste %1$s</string>
+    <string name="player_post_play_recommended">Recomendado para ti</string>
+    <string name="player_post_play_play">Reproducir</string>
+    <string name="player_post_play_previous_recommendation">Recomendación anterior</string>
+    <string name="player_post_play_next_recommendation">Siguiente recomendación</string>
+    <string name="player_post_play_return_to_player">Volver al reproductor</string>
+    <string name="player_post_play_trailer_countdown">Tráiler en %1$d</string>
+    <string name="player_post_play_trailer_playing">Reproduciendo tráiler</string>
+    <string name="player_post_play_trailer">Tráiler</string>
+    <string name="next_episode_not_aired_yet">El siguiente episodio aún no se ha estrenado</string>
+    <string name="display_mode_refresh">Actualizar</string>
+    <string name="display_mode_resolution">Resolución</string>
+
+
+    <string name="genre_action">Acción</string>
+    <string name="genre_adventure">Aventura</string>
+    <string name="genre_animation">Animación</string>
+    <string name="genre_comedy">Comedia</string>
+    <string name="genre_crime">Crimen</string>
+    <string name="genre_documentary">Documental</string>
+    <string name="genre_drama">Drama</string>
+    <string name="genre_family">Familia</string>
+    <string name="genre_fantasy">Fantasía</string>
+    <string name="genre_history">Historia</string>
+    <string name="genre_horror">Terror</string>
+    <string name="genre_music">Música</string>
+    <string name="genre_mystery">Misterio</string>
+    <string name="genre_romance">Romance</string>
+    <string name="genre_science_fiction">Ciencia ficción</string>
+    <string name="genre_tv_movie">Película de TV</string>
+    <string name="genre_thriller">Thriller</string>
+    <string name="genre_war">Bélica</string>
+    <string name="genre_western">Western</string>
+    <string name="genre_action_adventure">Acción y aventura</string>
+    <string name="genre_kids">Infantil</string>
+    <string name="genre_news">Noticias</string>
+    <string name="genre_reality">Reality</string>
+    <string name="genre_sci_fi_fantasy">Ciencia ficción y fantasía</string>
+    <string name="genre_soap">Telenovela</string>
+    <string name="genre_talk">Programa de entrevistas</string>
+    <string name="genre_war_politics">Guerra y política</string>
+    <string name="genre_anime">Anime</string>
+    <string name="genre_biography">Biografía</string>
+    <string name="genre_children">Niños</string>
+    <string name="genre_donghua">Donghua</string>
+    <string name="genre_game_show">Concurso</string>
+    <string name="genre_holiday">Festivo</string>
+    <string name="genre_home_and_garden">Hogar y jardín</string>
+    <string name="genre_mini_series">Miniserie</string>
+    <string name="genre_musical">Musical</string>
+    <string name="genre_none">Ninguno</string>
+    <string name="genre_short">Cortometraje</string>
+    <string name="genre_special_interest">Interés especial</string>
+    <string name="genre_sporting_event">Evento deportivo</string>
+    <string name="genre_superhero">Superhéroes</string>
+    <string name="genre_suspense">Suspense</string>
+    <string name="library_manage_lists">Administrar listas</string>
+    <string name="library_watchlist">Lista de deseos</string>
+    <string name="cloud_library_play_failed">No se pudo reproducir este archivo en la nube.</string>
+
+    <!-- Cloud library repository errors -->
+    <string name="cloud_library_error_provider_unavailable">La biblioteca en la nube no está disponible para %1$s.</string>
+    <string name="cloud_library_error_disabled">La biblioteca en la nube está desactivada.</string>
+
+    <!-- SidebarNavigation / MainActivity -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_discover">Descubrir</string>
+    <string name="nav_search">Buscar</string>
+    <string name="nav_library">Biblioteca</string>
+    <string name="nav_settings">Configuración</string>
+
+    <!-- Trakt errors -->
+
+    <string name="trakt_error_code_expired">El código de dispositivo caducó. Empieza de nuevo.</string>
+    <string name="trakt_error_code_used">El código de dispositivo ya fue usado. Empieza de nuevo.</string>
+    <string name="trakt_error_denied">Autorización denegada en Trakt.</string>
+    <string name="trakt_error_missing_credentials">Faltan las credenciales de TRAKT</string>
+    <string name="trakt_error_network_retry">Error de red, inténtalo de nuevo</string>
+    <string name="trakt_error_network_will_retry">Error de red, se reintentará</string>
+    <string name="trakt_error_rate_limited_minutes">Trakt está limitando las solicitudes. Inténtalo de nuevo en ~%1$d min</string>
+    <string name="trakt_error_failed_start_code">Error al iniciar la autenticación de Trakt (%1$d)</string>
+    <string name="trakt_error_no_active_device_code">Ningún código de dispositivo de Trakt activo</string>
+    <string name="trakt_error_invalid_device_code">Código de dispositivo no válido</string>
+    <string name="trakt_error_token_polling_failed_code">Error al consultar el token (%1$d)</string>
+    <string name="trakt_status_enter_activation_code">Introduce el código en trakt.tv/activate</string>
+    <string name="trakt_status_disconnected">Desconectado de Trakt</string>
+    <string name="trakt_status_cw_window_updated">Ventana de continuar viendo actualizada</string>
+    <string name="trakt_status_rate_limited_slowing_polling">Límite de solicitudes alcanzado, ralentizando las consultas...</string>
+    <string name="trakt_user_fallback">Usuario de Trakt</string>
+    <string name="trakt_error_failed_start">Error al iniciar la autenticación de Trakt</string>
+
+    <!-- Home errors -->
+    <string name="home_error_no_catalog_addons">No hay complementos de catálogo instalados</string>
+
+    <!-- Playback subtitle settings -->
+
+    <string name="cd_current">Actual</string>
+    <string name="cd_loading_backdrop">Cargando telón de fondo</string>
+    <string name="cd_loading_logo">Cargando logotipo</string>
+    <string name="cd_refresh">Actualizar</string>
+    <string name="cd_nuvio_logo">BalooTV</string>
+    <string name="cd_trakt_logo">Logotipo de Trakt</string>
+    <string name="cd_trakt_qr">Código QR de activación de Trakt</string>
+    <string name="cd_imdb">IMDb</string>
+
+    <!-- Collection Editor -->
+    <string name="collections_editor_trakt_list_with_id">Lista de Trakt %1$d</string>
+
+    <!-- Player runtime: torrent overlay + tracks -->
+    <string name="player_track_audio_fallback">Audio %1$d</string>
+    <string name="player_track_subtitle_fallback">Subtítulo %1$d</string>
+
+    <!-- Player runtime: error recovery -->
+    <string name="player_error_stream_blocked">\n\nLa fuente de la transmisión está bloqueada o restringida. Prueba con otra fuente.</string>
+    <string name="player_error_stream_removed">\n\nEl enlace de la transmisión ha caducado o ha sido eliminado. Prueba con otra fuente.</string>
+    <string name="player_error_stream_expired">\n\nEl enlace de la transmisión ha caducado. Prueba con otra fuente.</string>
+    <string name="player_error_stream_rate_limited">\n\nDemasiadas solicitudes a la fuente de la transmisión. Espera un momento e inténtalo de nuevo.</string>
+    <string name="player_error_stream_unavailable">\n\nEl servidor de la transmisión no está disponible en este momento. Prueba con otra fuente.</string>
+    <string name="player_error_source_invalid_content">Error de fuente: la fuente de la transmisión devolvió contenido inválido o no reproducible. Es posible que el enlace haya caducado o que el servidor haya devuelto una página de error en lugar de vídeo.\n\nPrueba con otra fuente. [%1$s]</string>
+    <string name="player_error_unsupported_format">Esta transmisión usa un formato que tu dispositivo podría no admitir. Prueba con otra fuente. [%1$s]</string>
+    <string name="player_error_initialize_failed">Error al inicializar el reproductor</string>
+    <string name="player_error_mpv_surface_failed">Error al inicializar la superficie de libmpv</string>
+    <string name="player_error_mpv_playback_failed">Error al inicializar la reproducción de libmpv</string>
+    <string name="player_error_playback_fallback">Error de reproducción</string>
+    <!-- Subtitle timing recovery -->
+    <string name="subtitle_download_failed_http">Error al descargar el subtítulo (HTTP %1$d)</string>
+    <string name="subtitle_download_empty_content">La descarga del subtítulo devolvió contenido vacío.</string>
+
+    <!-- Collection import errors -->
+    <string name="collections_import_error_empty_input">Entrada vacía</string>
+    <string name="collections_import_error_expected_array">Formato inválido: se esperaba un array</string>
+    <string name="collections_import_error_empty_array">Array vacío: no se encontraron colecciones</string>
+    <string name="collections_import_error_missing_id">Colección %1$d: falta o es inválido el \"id\"</string>
+    <string name="collections_import_error_missing_title">Colección \"%1$s\": falta o es inválido el \"title\"</string>
+    <string name="collections_import_error_folders_array">Colección \"%1$s\": \"folders\" debe ser un array</string>
+    <string name="collections_import_error_folder_invalid">Colección \"%1$s\", carpeta %2$d: formato inválido</string>
+    <string name="collections_import_error_folder_missing_id">Colección \"%1$s\", carpeta %2$d: falta \"id\"</string>
+    <string name="collections_import_error_folder_missing_title">Colección \"%1$s\", carpeta \"%2$s\": falta \"title\"</string>
+    <string name="collections_import_error_sources_array">Colección \"%1$s\", carpeta \"%2$s\": \"sources\" debe ser un array</string>
+    <string name="collections_import_error_invalid_tile_shape">Colección \"%1$s\", carpeta \"%2$s\": tileShape inválido \"%3$s\"</string>
+    <string name="collections_import_error_source_invalid">Colección \"%1$s\", carpeta \"%2$s\", fuente %3$d: formato inválido</string>
+    <string name="collections_import_error_source_required_fields">Colección \"%1$s\", carpeta \"%2$s\", fuente %3$d: faltan campos obligatorios</string>
+    <string name="collections_import_error_missing_tmdb_type">Colección \"%1$s\", carpeta \"%2$s\", fuente %3$d: falta el tipo de fuente TMDB</string>
+    <string name="collections_import_error_missing_trakt_list_id">Colección \"%1$s\", carpeta \"%2$s\", fuente %3$d: falta el ID de la lista de Trakt</string>
+    <string name="collections_import_error_json_parse">Error al analizar JSON: %1$s</string>
+
+    <!-- Library messages -->
+    <string name="library_list_fallback_title">Lista</string>
+
+    <!-- Trakt errors -->
+    <string name="trakt_library_error_request_failed">Error en la solicitud de Trakt</string>
+    <string name="trakt_library_error_create_list_failed">No se pudo crear la lista</string>
+    <string name="trakt_library_error_update_list_failed">No se pudo actualizar la lista</string>
+    <string name="trakt_library_error_delete_list_failed">No se pudo eliminar la lista</string>
+    <string name="trakt_library_error_reorder_lists_failed">No se pudo reordenar las listas</string>
+    <string name="trakt_library_error_fetch_watchlist_movies">No se pudieron obtener las películas de la lista de deseos</string>
+    <string name="trakt_library_error_fetch_watchlist_shows">No se pudieron obtener las series de la lista de deseos</string>
+    <string name="trakt_library_error_fetch_personal_lists">No se pudieron obtener las listas personales</string>
+    <string name="trakt_library_error_add_watchlist_failed">No se pudo añadir a la lista de deseos</string>
+    <string name="trakt_library_error_remove_watchlist_failed">No se pudo eliminar de la lista de deseos</string>
+    <string name="trakt_library_error_add_to_list_failed">No se pudo añadir a la lista</string>
+    <string name="trakt_library_error_remove_from_list_failed">No se pudo eliminar de la lista</string>
+    <string name="trakt_library_error_missing_compatible_ids">Faltan IDs compatibles para la operación de lista de Trakt</string>
+    <string name="trakt_library_error_auth_expired">La autenticación de Trakt ha caducado</string>
+    <string name="trakt_library_error_list_not_found">Lista de Trakt no encontrada</string>
+    <string name="trakt_library_error_list_limit_reached">Se alcanzó el límite de listas de Trakt. Se requiere actualizar el plan.</string>
+    <string name="trakt_error_request_failed">Error en la solicitud de Trakt</string>
+    <string name="tracking_removal_title">¿Eliminar de %1$s?</string>
+    <string name="tracking_removal_message">Al eliminar «%1$s» de %2$s también se borrará su %3$s allí. Esta acción no se puede deshacer.</string>
+    <string name="tracking_removal_impact_history">historial de visualización</string>
+    <string name="tracking_removal_impact_rating">puntuación</string>
+    <string name="tracking_removal_impact_history_rating">historial de visualización y puntuación</string>
+    <string name="action_remove_anyway">Eliminar de todos modos</string>
+    <string name="trakt_error_mark_watched_failed">No se pudo marcar como visto en Trakt (%1$d)</string>
+
+    <!-- Detail / poster options errors -->
+    <string name="detail_error_update_library_failed">No se pudo actualizar la biblioteca</string>
+    <string name="detail_error_update_episode_watched_failed">No se pudo actualizar el estado de visto del episodio</string>
+    <string name="poster_options_error_load_lists_failed">No se pudieron cargar las listas</string>
+    <string name="poster_options_error_update_lists_failed">No se pudieron actualizar las listas</string>
+
+    <!-- Search errors -->
+
+    <!-- Stream / TMDB / addons fallbacks -->
+    <string name="stream_unknown">Transmisión desconocida</string>
+    <string name="stream_embedded_group">Transmisiones incrustadas</string>
+    <string name="stream_embedded_fallback_name">Transmisión incrustada</string>
+
+    <!-- Network / safe API errors -->
+    <string name="network_error_empty_response_body">Cuerpo de respuesta vacío</string>
+    <string name="network_error_unknown">Se produjo un error desconocido</string>
+
+    <!-- Player runtime: stream / external link errors -->
+    <string name="player_stream_error_invalid_external_url">URL externa no válida</string>
+    <string name="player_stream_error_open_external_link_failed">No se pudo abrir el enlace externo</string>
+    <string name="player_stream_error_invalid_url">URL de transmisión no válida</string>
+    <string name="player_stream_error_missing_content_type">Falta el tipo de contenido</string>
+
+    <!-- Meta repository: addon detail error fragments -->
+    <string name="meta_error_detail_no_metadata_for_id">no devolvió metadatos para este id</string>
+
+    <!-- Stream repository: addon detail error fragments + fetch -->
+    <string name="stream_error_detail_no_streams_for_id">no devolvió transmisiones para este id</string>
+    <string name="stream_error_detail_addon_unreachable">no se pudo acceder al servidor del complemento</string>
+    <string name="stream_error_detail_addon_connection_failed">la conexión al complemento falló</string>
+    <string name="stream_error_detail_addon_timeout">la solicitud al complemento superó el tiempo de espera</string>
+    <string name="stream_error_detail_addon_cleartext_blocked">utiliza una conexión HTTP insegura que Android bloqueó</string>
+    <string name="stream_error_detail_addon_request_failed">la solicitud al complemento falló</string>
+    <string name="stream_error_fetch_failed">No se pudieron obtener las transmisiones</string>
+
+    <!-- Trakt: paginated fetch + comments -->
+    <string name="trakt_library_error_paginated_fetch_failed">Error al obtener datos paginados de Trakt (%1$d)</string>
+
+    <!-- Home: poster long-press list picker errors -->
+
+    <!-- Trakt: Related / comments / list items error fallbacks -->
+    <string name="trakt_related_error_request_failed">Error en la solicitud de contenido relacionado de Trakt</string>
+    <string name="trakt_comments_error_request_failed">Error en la solicitud de comentarios de Trakt</string>
+    <string name="trakt_library_error_fetch_list_items">No se pudieron obtener los elementos de la lista</string>
+
+    <!-- External playback keep-alive service -->
+    <string name="external_playback_notification_text">Reproduciendo en reproductor externo</string>
+    <string name="external_playback_channel_description">Mantiene la aplicación activa durante la reproducción en un reproductor externo</string>
+
+    <!-- Playback diagnostics card -->
+    <string name="diag_value_on">Activado</string>
+    <string name="diag_value_off">Desactivado</string>
+
+    <!-- Player errors -->
+    <string name="player_error_play_stream_failed">No se pudo reproducir la transmisión seleccionada</string>
+
+    <!-- Size and speed units -->
+    <string name="unit_size_b">%1$d B</string>
+    <string name="unit_size_kb">%1$s KB</string>
+    <string name="unit_size_mb">%1$s MB</string>
+    <string name="unit_size_gb">%1$s GB</string>
+
+    <!-- Misc fallbacks -->
+    <string name="profile_default_name">Perfil %1$d</string>
+    <string name="detail_tmdb_fallback_title">TMDB %1$d</string>
+
+    <!-- Stream Throughput Speed & Chunk Diagnostic Test -->
+
+    <string name="about_gpl_attribution">BalooTV se basa en NuvioTV (GPL-3.0).</string>
+    <string name="home_empty_no_sources_title">No hay fuentes de contenido</string>
+</resources>

@@ -1,0 +1,20 @@
+{
+  "contrato": "C7 · Tarjeta de Seguir viendo (Inicio). A medias es del 2 % (incluido) al 90 % (sin incluir), venga de donde venga el progreso; fuera de eso no sale como a medias. Película a medias: «Quedan {resto}» («Queda 1 min» con 1; con menos de un minuto, «Queda menos de un minuto»). Episodio a medias: «T{temporada} · E{episodio} · Quedan {resto}». El resto se redondea al minuto como en C4 (termina.json), sin «termina a las». Sin duración (progreso solo en porcentaje, de Trakt): la película no lleva detalle («») y el episodio solo «T2 · E7». Por debajo del 2 % la película no sale y el episodio sale como siguiente episodio, «T4 · E3 · Siguiente episodio», solo si el anterior es el último visto de la serie (anteriorVisto); si no, o si es el primero (T1 · E1, sin anterior), no sale. Del 90 % en adelante no sale; si es un episodio, en su lugar sale el siguiente como «Siguiente episodio».",
+  "casos": [
+    { "nombre": "película por debajo del 2 %, fuera", "tipo": "pelicula", "temporada": null, "episodio": null, "progreso": 0.01, "duracionMin": 120, "espera": "fuera" },
+    { "nombre": "película justo en el 2 %, a medias", "tipo": "pelicula", "temporada": null, "episodio": null, "progreso": 0.02, "duracionMin": 120, "espera": "Quedan 1 h 58 min" },
+    { "nombre": "película a medias", "tipo": "pelicula", "temporada": null, "episodio": null, "progreso": 0.25, "duracionMin": 116, "espera": "Quedan 1 h 27 min" },
+    { "nombre": "película casi al 90 %", "tipo": "pelicula", "temporada": null, "episodio": null, "progreso": 0.89, "duracionMin": 100, "espera": "Quedan 11 min" },
+    { "nombre": "película justo en el 90 %, fuera", "tipo": "pelicula", "temporada": null, "episodio": null, "progreso": 0.90, "duracionMin": 100, "espera": "fuera" },
+    { "nombre": "película vista, fuera", "tipo": "pelicula", "temporada": null, "episodio": null, "progreso": 0.97, "duracionMin": 100, "espera": "fuera" },
+    { "nombre": "película sin duración, sin detalle", "tipo": "pelicula", "temporada": null, "episodio": null, "progreso": 0.54, "duracionMin": null, "espera": "" },
+    { "nombre": "episodio por debajo del 2 %, como siguiente episodio", "tipo": "serie", "temporada": 4, "episodio": 3, "progreso": 0.01, "duracionMin": 45, "anteriorVisto": true, "espera": "T4 · E3 · Siguiente episodio" },
+    { "nombre": "episodio por debajo del 2 % con el anterior sin ver, fuera", "tipo": "serie", "temporada": 4, "episodio": 3, "progreso": 0.01, "duracionMin": 45, "anteriorVisto": false, "espera": "fuera" },
+    { "nombre": "primer episodio por debajo del 2 %, fuera (no tiene anterior)", "tipo": "serie", "temporada": 1, "episodio": 1, "progreso": 0.01, "duracionMin": 24, "anteriorVisto": false, "espera": "fuera" },
+    { "nombre": "episodio a medias", "tipo": "serie", "temporada": 4, "episodio": 3, "progreso": 0.30, "duracionMin": 50, "espera": "T4 · E3 · Quedan 35 min" },
+    { "nombre": "episodio con un minuto", "tipo": "serie", "temporada": 1, "episodio": 1, "progreso": 0.85, "duracionMin": 8, "espera": "T1 · E1 · Queda 1 min" },
+    { "nombre": "episodio con menos de un minuto", "tipo": "serie", "temporada": 1, "episodio": 2, "progreso": 0.88, "duracionMin": 6, "espera": "T1 · E2 · Queda menos de un minuto" },
+    { "nombre": "episodio del 90 % en adelante, fuera", "tipo": "serie", "temporada": 4, "episodio": 3, "progreso": 0.92, "duracionMin": 50, "espera": "fuera" },
+    { "nombre": "episodio sin duración, solo temporada y episodio", "tipo": "serie", "temporada": 2, "episodio": 7, "progreso": 0.54, "duracionMin": null, "espera": "T2 · E7" }
+  ]
+}

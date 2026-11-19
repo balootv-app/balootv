@@ -1,0 +1,76 @@
+{
+  "contrato": "C5 · Sagas (ficha de película). De collection/{id} en es-ES quedan las partes con release_date <= hoy (Madrid; lo que sale hoy se queda); sin fecha, fuera. Con menos de 2, nada. Orden por release_date ascendente y, si empatan, por id de TMDB; la abierta va en su sitio. vista = id en las vistas (Trakt más lo marcado pendiente de subir). Título: el name de la colección tal cual; vacío o null, «La saga». Las partes sin cartel se quedan.",
+  "casos": [
+    {
+      "nombre": "orden por fecha y empate por id",
+      "coleccion": "Matrix - Colección",
+      "hoy": "2026-10-31",
+      "partes": [
+        { "tmdb": 605, "fecha": "2003-11-05" },
+        { "tmdb": 700, "fecha": "2003-05-15" },
+        { "tmdb": 603, "fecha": "1999-03-31" },
+        { "tmdb": 604, "fecha": "2003-05-15" }
+      ],
+      "vistas": [],
+      "espera": { "nombre": "Matrix - Colección", "partes": [ { "tmdb": 603, "vista": false }, { "tmdb": 604, "vista": false }, { "tmdb": 700, "vista": false }, { "tmdb": 605, "vista": false } ] }
+    },
+    {
+      "nombre": "sin fecha y futuras fuera, lo que sale hoy se queda",
+      "coleccion": "Matrix - Colección",
+      "hoy": "2026-10-31",
+      "partes": [
+        { "tmdb": 902, "fecha": "2026-11-01" },
+        { "tmdb": 900, "fecha": null },
+        { "tmdb": 901, "fecha": "2026-10-31" },
+        { "tmdb": 603, "fecha": "1999-03-31" }
+      ],
+      "vistas": [],
+      "espera": { "nombre": "Matrix - Colección", "partes": [ { "tmdb": 603, "vista": false }, { "tmdb": 901, "vista": false } ] }
+    },
+    {
+      "nombre": "una sola estrenada, sin saga",
+      "coleccion": "Matrix - Colección",
+      "hoy": "2026-10-31",
+      "partes": [
+        { "tmdb": 603, "fecha": "1999-03-31" },
+        { "tmdb": 902, "fecha": "2027-01-01" }
+      ],
+      "vistas": [],
+      "espera": null
+    },
+    {
+      "nombre": "nombre vacío es «La saga»",
+      "coleccion": "",
+      "hoy": "2026-10-31",
+      "partes": [
+        { "tmdb": 603, "fecha": "1999-03-31" },
+        { "tmdb": 604, "fecha": "2003-05-15" }
+      ],
+      "vistas": [],
+      "espera": { "nombre": "La saga", "partes": [ { "tmdb": 603, "vista": false }, { "tmdb": 604, "vista": false } ] }
+    },
+    {
+      "nombre": "sin nombre es «La saga»",
+      "coleccion": null,
+      "hoy": "2026-10-31",
+      "partes": [
+        { "tmdb": 603, "fecha": "1999-03-31" },
+        { "tmdb": 604, "fecha": "2003-05-15" }
+      ],
+      "vistas": [],
+      "espera": { "nombre": "La saga", "partes": [ { "tmdb": 603, "vista": false }, { "tmdb": 604, "vista": false } ] }
+    },
+    {
+      "nombre": "las vistas, marcadas",
+      "coleccion": "Matrix - Colección",
+      "hoy": "2026-10-31",
+      "partes": [
+        { "tmdb": 603, "fecha": "1999-03-31" },
+        { "tmdb": 604, "fecha": "2003-05-15" },
+        { "tmdb": 605, "fecha": "2003-11-05" }
+      ],
+      "vistas": [603, 605, 999],
+      "espera": { "nombre": "Matrix - Colección", "partes": [ { "tmdb": 603, "vista": true }, { "tmdb": 604, "vista": false }, { "tmdb": 605, "vista": true } ] }
+    }
+  ]
+}

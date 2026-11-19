@@ -1,0 +1,1015 @@
+{
+  "contrato": "C2 · composición de filas de Ideas / Inicio (diseño 2026-10-31)",
+  "casos": [
+    {
+      "nombre": "una película vista no sale",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 6,
+            "trakt": 100006
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          }
+        ],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:1",
+            "tmdb:3",
+            "tmdb:4",
+            "tmdb:5",
+            "tmdb:6"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "lo visto se reconoce por Trakt aunque falte TMDB",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 6,
+            "trakt": 100006
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": null,
+            "trakt": 100003
+          }
+        ],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:1",
+            "tmdb:2",
+            "tmdb:4",
+            "tmdb:5",
+            "tmdb:6"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "lo apuntado no sale",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 6,
+            "trakt": 100006
+          }
+        ],
+        "vistos": [],
+        "enLista": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          }
+        ],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "EsteMes",
+          "titulos": [
+            "tmdb:2",
+            "tmdb:4",
+            "tmdb:5",
+            "tmdb:6"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "repetido entre filas: solo en la primera",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [],
+        "porqueViste": [],
+        "estaSemana": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          }
+        ],
+        "esteMes": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 6,
+            "trakt": 100006
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 7,
+            "trakt": 100007
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 8,
+            "trakt": 100008
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 9,
+            "trakt": 100009
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 10,
+            "trakt": 100010
+          }
+        ],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "EstaSemana",
+          "titulos": [
+            "tmdb:1",
+            "tmdb:2",
+            "tmdb:3",
+            "tmdb:4",
+            "tmdb:5"
+          ]
+        },
+        {
+          "clase": "EsteMes",
+          "titulos": [
+            "tmdb:6",
+            "tmdb:7",
+            "tmdb:8",
+            "tmdb:9",
+            "tmdb:10"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "una fila de 3 no sale y lo suyo puede salir abajo",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          }
+        ],
+        "esteMes": [],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "EstaSemana",
+          "titulos": [
+            "tmdb:1",
+            "tmdb:2",
+            "tmdb:3",
+            "tmdb:4"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "como mucho 10 por fila",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 6,
+            "trakt": 100006
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 7,
+            "trakt": 100007
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 8,
+            "trakt": 100008
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 9,
+            "trakt": 100009
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 10,
+            "trakt": 100010
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 11,
+            "trakt": 100011
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 12,
+            "trakt": 100012
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 13,
+            "trakt": 100013
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 14,
+            "trakt": 100014
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:1",
+            "tmdb:2",
+            "tmdb:3",
+            "tmdb:4",
+            "tmdb:5",
+            "tmdb:6",
+            "tmdb:7",
+            "tmdb:8",
+            "tmdb:9",
+            "tmdb:10"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Todo intercala películas y series",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 11,
+            "trakt": 200011
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 12,
+            "trakt": 200012
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 13,
+            "trakt": 200013
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:1",
+            "tmdb:11",
+            "tmdb:2",
+            "tmdb:12",
+            "tmdb:3",
+            "tmdb:13"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "filtro Series",
+      "filtro": "Series",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 11,
+            "trakt": 200011
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 12,
+            "trakt": 200012
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 13,
+            "trakt": 200013
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 14,
+            "trakt": 200014
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 15,
+            "trakt": 200015
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:11",
+            "tmdb:12",
+            "tmdb:13",
+            "tmdb:14",
+            "tmdb:15"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Porque viste con su semilla",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [],
+        "porqueViste": [
+          {
+            "titulo": {
+              "tipo": "PELICULA",
+              "tmdb": 50,
+              "trakt": 100050
+            },
+            "relacionados": [
+              {
+                "tipo": "PELICULA",
+                "tmdb": 51,
+                "trakt": 100051
+              },
+              {
+                "tipo": "PELICULA",
+                "tmdb": 52,
+                "trakt": 100052
+              },
+              {
+                "tipo": "PELICULA",
+                "tmdb": 53,
+                "trakt": 100053
+              },
+              {
+                "tipo": "PELICULA",
+                "tmdb": 54,
+                "trakt": 100054
+              },
+              {
+                "tipo": "PELICULA",
+                "tmdb": 55,
+                "trakt": 100055
+              }
+            ]
+          }
+        ],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": []
+      },
+      "esperado": [
+        {
+          "clase": "PorqueViste:tmdb:50",
+          "titulos": [
+            "tmdb:51",
+            "tmdb:52",
+            "tmdb:53",
+            "tmdb:54",
+            "tmdb:55"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "temporada nueva delante, sin filtro de vistos y con 1",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "SERIE",
+            "tmdb": 1,
+            "trakt": 200001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 6,
+            "trakt": 100006
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [
+          {
+            "tipo": "SERIE",
+            "tmdb": 1,
+            "trakt": 200001
+          }
+        ],
+        "enLista": [],
+        "temporadaNueva": [
+          {
+            "titulo": {
+              "tipo": "SERIE",
+              "tmdb": 1,
+              "trakt": 200001
+            },
+            "temporada": 3
+          }
+        ]
+      },
+      "esperado": [
+        {
+          "clase": "TemporadaNueva",
+          "titulos": [
+            "tmdb:1"
+          ],
+          "temporadas": [
+            3
+          ]
+        },
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:2",
+            "tmdb:3",
+            "tmdb:4",
+            "tmdb:5",
+            "tmdb:6"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "temporada nueva cuenta como mostrada",
+      "filtro": "Todo",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "SERIE",
+            "tmdb": 1,
+            "trakt": 200001
+          },
+          {
+            "tipo": "SERIE",
+            "tmdb": 2,
+            "trakt": 200002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 6,
+            "trakt": 100006
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 7,
+            "trakt": 100007
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": [
+          {
+            "titulo": {
+              "tipo": "SERIE",
+              "tmdb": 2,
+              "trakt": 200002
+            },
+            "temporada": 2
+          }
+        ]
+      },
+      "esperado": [
+        {
+          "clase": "TemporadaNueva",
+          "titulos": [
+            "tmdb:2"
+          ],
+          "temporadas": [
+            2
+          ]
+        },
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:3",
+            "tmdb:1",
+            "tmdb:4",
+            "tmdb:5",
+            "tmdb:6",
+            "tmdb:7"
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "con filtro Películas no sale la temporada nueva",
+      "filtro": "Peliculas",
+      "entrada": {
+        "paraTi": [
+          {
+            "tipo": "PELICULA",
+            "tmdb": 1,
+            "trakt": 100001
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 2,
+            "trakt": 100002
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 3,
+            "trakt": 100003
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 4,
+            "trakt": 100004
+          },
+          {
+            "tipo": "PELICULA",
+            "tmdb": 5,
+            "trakt": 100005
+          }
+        ],
+        "porqueViste": [],
+        "estaSemana": [],
+        "esteMes": [],
+        "vistos": [],
+        "enLista": [],
+        "temporadaNueva": [
+          {
+            "titulo": {
+              "tipo": "SERIE",
+              "tmdb": 1,
+              "trakt": 200001
+            },
+            "temporada": 2
+          }
+        ]
+      },
+      "esperado": [
+        {
+          "clase": "ParaTi",
+          "titulos": [
+            "tmdb:1",
+            "tmdb:2",
+            "tmdb:3",
+            "tmdb:4",
+            "tmdb:5"
+          ]
+        }
+      ]
+    }
+  ],
+  "ordenDelDia": [
+    {
+      "nombre": "Para ti en el orden del día (31-10)",
+      "hoy": "2026-10-31",
+      "titulos": [
+        {
+          "tipo": "PELICULA",
+          "tmdb": 1,
+          "trakt": 100001
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 2,
+          "trakt": 100002
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 3,
+          "trakt": 100003
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 4,
+          "trakt": 100004
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 5,
+          "trakt": 100005
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 6,
+          "trakt": 100006
+        },
+        {
+          "tipo": "SERIE",
+          "tmdb": 11,
+          "trakt": 200011
+        },
+        {
+          "tipo": "SERIE",
+          "tmdb": 12,
+          "trakt": 200012
+        },
+        {
+          "tipo": "SERIE",
+          "tmdb": 13,
+          "trakt": 200013
+        }
+      ],
+      "esperado": [
+        "tmdb:1",
+        "tmdb:2",
+        "tmdb:3",
+        "tmdb:4",
+        "tmdb:5",
+        "tmdb:6",
+        "tmdb:11",
+        "tmdb:12",
+        "tmdb:13"
+      ]
+    },
+    {
+      "nombre": "el mismo Para ti otro día cambia de orden (01-11)",
+      "hoy": "2026-11-01",
+      "titulos": [
+        {
+          "tipo": "PELICULA",
+          "tmdb": 1,
+          "trakt": 100001
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 2,
+          "trakt": 100002
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 3,
+          "trakt": 100003
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 4,
+          "trakt": 100004
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 5,
+          "trakt": 100005
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 6,
+          "trakt": 100006
+        },
+        {
+          "tipo": "SERIE",
+          "tmdb": 11,
+          "trakt": 200011
+        },
+        {
+          "tipo": "SERIE",
+          "tmdb": 12,
+          "trakt": 200012
+        },
+        {
+          "tipo": "SERIE",
+          "tmdb": 13,
+          "trakt": 200013
+        }
+      ],
+      "esperado": [
+        "tmdb:1",
+        "tmdb:2",
+        "tmdb:3",
+        "tmdb:4",
+        "tmdb:5",
+        "tmdb:6",
+        "tmdb:11",
+        "tmdb:12",
+        "tmdb:13"
+      ]
+    },
+    {
+      "nombre": "sin id de Trakt va al final, en su orden",
+      "hoy": "2026-10-31",
+      "titulos": [
+        {
+          "tipo": "PELICULA",
+          "tmdb": 1,
+          "trakt": null
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 2,
+          "trakt": 100002
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 3,
+          "trakt": null
+        },
+        {
+          "tipo": "PELICULA",
+          "tmdb": 4,
+          "trakt": 100004
+        }
+      ],
+      "esperado": [
+        "tmdb:2",
+        "tmdb:4",
+        "tmdb:1",
+        "tmdb:3"
+      ]
+    }
+  ]
+}

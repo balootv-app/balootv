@@ -1,0 +1,35 @@
+# Lo que se queda fuera de la exportación al repositorio público (y que el guardia no mira).
+# Una ruta o un patrón por línea; las que acaban en / son carpetas enteras.
+# Capturas antiguas y del salón de casa, medidas y modelo de la tele, panel interno.
+.idea/
+# Documentos internos de trabajo (decisión del 19-11-2026): siguen en el repositorio privado.
+docs/
+.claude/
+CLAUDE.md
+ESTADO.md
+DESIGN.md
+# Respuestas reales de addons y lo que las recoge (19-11-2026): el repositorio público no enseña de dónde salen los
+# enlaces. Siguen aquí y sus pruebas pasan aquí.
+app/src/test/resources/balootv/fuentes/
+app/src/test/resources/balootv/anime/
+app/src/test/resources/balootv/banco.json
+scripts/balootv/muestreo/
+scripts/balootv/banco/
+# Pruebas sobre esos datos o con casos llenos de nombres de addons y webs de torrents.
+app/src/test/java/com/nuvio/tv/balootv/fuentes/AudioCastellanoTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/BancoAnimeTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/BancoFuentesTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/ClasificadorAnimeTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/ClasificadorIdiomaTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/InicioAnticipadoTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/LineaFuenteTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/ListaNegraFuentesTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/MuestreoTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/PrecargaFuentesTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/RendimientoSelectorTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/SelectorBalooTVTest.kt
+app/src/test/java/com/nuvio/tv/balootv/fuentes/ValidadorTituloTest.kt
+app/src/test/java/com/nuvio/tv/balootv/reproductor/PublicidadSubtitulosTest.kt
+app/src/test/java/com/nuvio/tv/balootv/reproductor/SaltoFuenteTest.kt
+app/src/test/java/com/nuvio/tv/core/player/StreamAutoPlaySelectorTest.kt
+app/src/test/java/com/nuvio/tv/core/debrid/DebridFileSelectorReleaseTest.kt

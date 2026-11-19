@@ -1,0 +1,415 @@
+{
+ "page": 1,
+ "results": [
+  {
+   "adult": false,
+   "backdrop_path": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+   "genre_ids": [
+    878,
+    12
+   ],
+   "id": 687163,
+   "title": "Proyecto Salvación",
+   "original_language": "en",
+   "original_title": "Project Hail Mary",
+   "overview": "El profesor de ciencias Ryland Grace se despierta en una nave espacial a años luz de casa sin recordar quién es ni cómo ha llegado hasta allí. A medida que recupera la memoria, empieza a descubrir su misión: resolver el enigma de la misteriosa sustancia que provoca la extinción del sol. Deberá recurrir a sus conocimientos científicos y a sus ideas poco ortodoxas para salvar todo lo que hay en la Tierra de la extinción... pero una amistad inesperada significa que quizá no tenga que hacerlo solo.",
+   "popularity": 1080.0306,
+   "poster_path": "/7lwOTxajURKEWO6gI370NTrVdBO.jpg",
+   "release_date": "2026-03-15",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.636,
+   "vote_count": 8418
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/dgUDj84BWtW6EZzee8BkgKnjDhh.jpg",
+   "genre_ids": [
+    28,
+    53
+   ],
+   "id": 1561726,
+   "title": "Masterplan",
+   "original_language": "en",
+   "original_title": "Masterplan",
+   "overview": "Un legendario ladrón se propone robar la Mona Lisa y recluta a dos jóvenes para que le ayuden: Chiara, una experta en cibercrimen italiana, y Jay, un especialista en explosivos francés. Más tarde, les confiesa que es el padre de ambos. Tras una caótica reunión, los miembros de esta nueva familia deben aprender a trabajar juntos y a no matarse entre ellos para completar con éxito el robo del siglo.",
+   "popularity": 228.4251,
+   "poster_path": "/pLLvKhqTngUispTyDofvoEDKrxa.jpg",
+   "release_date": "2026-10-16",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.1,
+   "vote_count": 128
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/4hneB0UFKOZAGJHqJ3VhDcG72uH.jpg",
+   "genre_ids": [
+    10749,
+    18
+   ],
+   "id": 1381078,
+   "title": "El amor de tu vida",
+   "original_language": "en",
+   "original_title": "Love of Your Life",
+   "overview": "Maya, una enfermera de Boston de 26 años, abandona su vida y su matrimonio con Charlie tras la pandemia. Convertida en nómada digital en Portugal, conoce a Felix, con quien se muda a Inglaterra mientras afronta su identidad, sus deseos y la opción de volver a amar.",
+   "popularity": 90.2675,
+   "poster_path": "/nqeDR6qGU8mqguQHRkAUg2ySBZv.jpg",
+   "release_date": "2026-10-07",
+   "softcore": false,
+   "video": false,
+   "vote_average": 6.792,
+   "vote_count": 118
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/wH2RtKsUjGc3ycRvxqOSbzov0av.jpg",
+   "genre_ids": [
+    18,
+    10749
+   ],
+   "id": 45722,
+   "title": "No mires para abajo",
+   "original_language": "es",
+   "original_title": "No mires para abajo",
+   "overview": "Eloy es un adolescente de diecinueve años que trabaja junto a sus padres. Su trabajo consiste en repartir lápidas y figuras ornamentales en las sepulturas que atiende el negocio familiar en el cementerio de la ciudad. Al morir su padre, Eloy ve acelerar el tiempo que lo llevará a madurar en un mundo hostil y ajeno. En el camino conoce a Beatriz, una joven andaluza, que mediante el aprendizaje de ciertas prácticas sexuales le permitirá acceder a zonas desconocidas de su espíritu y de la realidad.",
+   "popularity": 79.015,
+   "poster_path": "/97FUF1MbKpW0ZwwhnDbeoI2cPB4.jpg",
+   "release_date": "2008-10-18",
+   "softcore": false,
+   "video": false,
+   "vote_average": 5.7,
+   "vote_count": 71
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
+   "genre_ids": [
+    12,
+    18,
+    878
+   ],
+   "id": 157336,
+   "title": "Interstellar",
+   "original_language": "en",
+   "original_title": "Interstellar",
+   "overview": "Un grupo de exploradores hacen uso de un agujero de gusano recientemente descubierto para superar las limitaciones de los viajes espaciales tripulados y vencer las inmensas distancias que tiene un viaje interestelar.",
+   "popularity": 73.5573,
+   "poster_path": "/d1QKiYtceF3GDtxvTFXFAqwwah9.jpg",
+   "release_date": "2014-11-04",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.491,
+   "vote_count": 41578
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/rvtdN5XkWAfGX6xDuPL6yYS2seK.jpg",
+   "genre_ids": [
+    80,
+    9648,
+    53
+   ],
+   "id": 414906,
+   "title": "The Batman",
+   "original_language": "en",
+   "original_title": "The Batman",
+   "overview": "Cuando un asesino se dirige a la élite de Gotham con una serie de maquinaciones sádicas, un rastro de pistas crípticas envía Batman a una investigación en los bajos fondos. A medida que las pruebas comienzan a acercarse a su casa y se hace evidente la magnitud de los planes del autor, Batman debe forjar nuevas relaciones, desenmascarar al culpable y hacer justicia al abuso de poder y la corrupción que durante mucho tiempo han asolado Gotham City.",
+   "popularity": 53.5549,
+   "poster_path": "/mo7teil1qH0SxgLijnqeYP1Eb4w.jpg",
+   "release_date": "2022-03-01",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.674,
+   "vote_count": 12728
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+   "genre_ids": [
+    28,
+    878,
+    80
+   ],
+   "id": 27205,
+   "title": "Origen",
+   "original_language": "en",
+   "original_title": "Inception",
+   "overview": "Dom Cobb es un ladrón hábil, el mejor de todos, especializado en el peligroso arte de extracción: el robo de secretos valiosos desde las profundidades del subconsciente durante el estado de sueño cuando la mente está más vulnerable. Esta habilidad excepcional de Cobb le ha hecho un jugador codiciado en el traicionero nuevo mundo de espionaje corporativo, pero al mismo tiempo, le ha convertido en un fugitivo internacional y ha tenido que sacrificar todo que le importaba. Ahora a Cobb se le ofrece una oportunidad para redimirse. Con un último trabajo podría recuperar su vida anterior, pero solamente si logra lo imposible.",
+   "popularity": 62.2458,
+   "poster_path": "/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg",
+   "release_date": "2010-07-15",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.373,
+   "vote_count": 40502
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg",
+   "genre_ids": [
+    878,
+    12
+   ],
+   "id": 693134,
+   "title": "Dune: Parte dos",
+   "original_language": "en",
+   "original_title": "Dune: Part Two",
+   "overview": "Sigue el viaje mítico de Paul Atreides mientras se une a Chani y los Fremen en una guerra de venganza contra los conspiradores que destruyeron a su familia. Al enfrentarse a una elección entre el amor de su vida y el destino del universo conocido, Paul se esfuerza por evitar un futuro terrible que solo él puede prever.",
+   "popularity": 63.3284,
+   "poster_path": "/xCHmhHeO7aOCMlzcNukGH6Q7EiD.jpg",
+   "release_date": "2024-02-27",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.142,
+   "vote_count": 8791
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/3UbaCMmqOd7mca4Y5DOzY2ZVTyX.jpg",
+   "genre_ids": [
+    28,
+    12,
+    14
+   ],
+   "id": 122917,
+   "title": "El hobbit: La batalla de los cinco ejércitos",
+   "original_language": "en",
+   "original_title": "The Hobbit: The Battle of the Five Armies",
+   "overview": "Después de haber recuperado el reino del Dragón Smaug, la Compañía ha desencadenado, sin querer, una potencia maligna. Un Smaug enfurecido vuela hacia la Ciudad del Lago para acabar con cualquier resto de vida. Obsesionado sobre todo con el reino recuperado, Thorin sacrifica la amistad y el honor para mantenerlo mientras que Bilbo intenta frenéticamente hacerle ver la razón por la que el hobbit toma una decisión desesperada y peligrosa. Pero hay aún mayores peligros por delante. Sin la ayuda aparente del mago Gandalf, su gran enemigo Sauron ha enviado legiones de orcos hacia la Montaña Solitaria en un ataque furtivo. Cuando la oscuridad se cierna sobre ellos, las razas de los Enanos, Elfos y Hombres deben decidir si unirse o ser destruidos. Bilbo se encontrará así en la batalla épica de los Cinco Ejércitos, donde el futuro de la Tierra Media está en juego.",
+   "popularity": 56.6923,
+   "poster_path": "/6OiNSLcRKJsBLXwb6DEi6IQ0JFk.jpg",
+   "release_date": "2014-12-10",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.34,
+   "vote_count": 15890
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/gNdLJU9TxrpGx4dkZidjys3fyy0.jpg",
+   "genre_ids": [
+    878,
+    18
+   ],
+   "id": 335984,
+   "title": "Blade Runner 2049",
+   "original_language": "en",
+   "original_title": "Blade Runner 2049",
+   "overview": "Han pasado 30 años desde los acontecimientos ocurridos en Blade Runner (1982). El oficial K, un blade runner caza-replicantes del Departamento de Policía de Los Ángeles, descubre un secreto que ha estado enterrado durante mucho tiempo y que tiene el potencial de llevar a la sociedad al caos. Su investigación le conducirá a la búsqueda del legendario Rick Deckard, un antiguo blade runner en paradero desconocido, que lleva desaparecido 30 años.",
+   "popularity": 52.9534,
+   "poster_path": "/cOt8SQwrxpoTv9Bc3kyce3etkZX.jpg",
+   "release_date": "2017-10-04",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.61,
+   "vote_count": 15884
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+   "genre_ids": [
+    18,
+    80
+   ],
+   "id": 278,
+   "title": "Cadena perpetua",
+   "original_language": "en",
+   "original_title": "The Shawshank Redemption",
+   "overview": "Acusado del asesinato de su mujer, Andrew Dufresne, tras ser condenado a cadena perpetua, es enviado a la prisión de Shawshank. Con el paso de los años conseguirá ganarse la confianza del director del centro y el respeto de sus compañeros presidiarios, especialmente de Red, el jefe de la mafia de los sobornos.",
+   "popularity": 55.8017,
+   "poster_path": "/uRRTV7p6l2ivtODWJVVAMRrwTn2.jpg",
+   "release_date": "1994-09-23",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.733,
+   "vote_count": 31638
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/zTnAnYIn0Iv3cn0ZHlzLhou3ybm.jpg",
+   "genre_ids": [
+    9648,
+    53
+   ],
+   "id": 1368166,
+   "title": "La asistenta",
+   "original_language": "en",
+   "original_title": "The Housemaid",
+   "overview": "Una joven (Sydney Sweeney), con un pasado complicado comienza a trabajar como asistenta en la lujosa casa de los Winchester. A medida que se adentra en la vida de la familia, descubrirá secretos oscuros que pondrán en peligro su seguridad, pero quizá ya sea demasiado tarde... Adaptación de la novela de Freida McFadden.",
+   "popularity": 58.6399,
+   "poster_path": "/tMEu0gniT4zfcyDF5KMjof0DMog.jpg",
+   "release_date": "2025-12-18",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.3,
+   "vote_count": 3246
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/f0ACHVpV707zqu4etZrXnWNdSgL.jpg",
+   "genre_ids": [
+    28,
+    80,
+    53
+   ],
+   "id": 866398,
+   "title": "Beekeeper: El protector",
+   "original_language": "en",
+   "original_title": "The Beekeeper",
+   "overview": "La brutal campaña de venganza de Adam Clay adquiere tintes nacionales tras revelarse que es un antiguo agente de una poderosa organización clandestina conocida como \"Beekeeper\".",
+   "popularity": 48.737,
+   "poster_path": "/gBdhYoROX6SHE3vVnBfEHI7Ojma.jpg",
+   "release_date": "2024-01-08",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.286,
+   "vote_count": 4648
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+   "genre_ids": [
+    28,
+    53,
+    80
+   ],
+   "id": 155,
+   "title": "El caballero oscuro",
+   "original_language": "en",
+   "original_title": "The Dark Knight",
+   "overview": "Batman/Bruce Wayne regresa para continuar su guerra contra el crimen. Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato demuestra su eficacia, pero, de repente, aparece Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.",
+   "popularity": 55.673,
+   "poster_path": "/8QDQExnfNFOtabLDKqfDQuHDsIg.jpg",
+   "release_date": "2008-07-16",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.538,
+   "vote_count": 37029
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+   "genre_ids": [
+    16,
+    28,
+    14
+   ],
+   "id": 1311031,
+   "title": "Guardianes de la noche: Kimetsu no Yaiba La fortaleza infinita",
+   "original_language": "ja",
+   "original_title": "劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来",
+   "overview": "El Cuerpo de Cazadores de Demonios se enfrenta a los Doce Kizuki restantes antes de enfrentarse a Muzan en el Castillo del Infinito para derrotarlo de una vez por todas.",
+   "popularity": 50.989,
+   "poster_path": "/lYnhd124Fi3vVYlh6qmItxpGZXd.jpg",
+   "release_date": "2025-07-18",
+   "softcore": false,
+   "video": false,
+   "vote_average": 8.802,
+   "vote_count": 2318
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/o7Oy9Gbx1CCyaweL8xUhtMW4Puq.jpg",
+   "genre_ids": [
+    10749,
+    35
+   ],
+   "id": 1032863,
+   "title": "La hipótesis del amor",
+   "original_language": "en",
+   "original_title": "The Love Hypothesis",
+   "overview": "Olive es una brillante estudiante de doctorado. Cuando descubre que su mejor amiga, Ahn, se ha enamorado de Jeremy, el chico que a ella le gustaba, Olive besa impulsivamente al intimidante profesor Adam Carlsen para demostrar que lo ha superado. El beso les lleva a ambos a mantener una relación falsa con reglas, límites y un acuerdo mutuamente beneficioso. Pero cuando su acuerdo empieza a difuminarse entre la ficción y la realidad, Olive se ve obligada a poner a prueba su hipótesis: que quizá el amor sí merezca la pena.",
+   "popularity": 43.9997,
+   "poster_path": "/ylrSdW6fZYwaInYH6WAqvIEnSiV.jpg",
+   "release_date": "2026-09-23",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.99,
+   "vote_count": 639
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/cz4vLJrmaV1zJlRYbxqtvLzeLWB.jpg",
+   "genre_ids": [
+    28,
+    35,
+    80,
+    9648
+   ],
+   "id": 1168190,
+   "title": "Los hermanos demolición",
+   "original_language": "en",
+   "original_title": "The Wrecking Crew",
+   "overview": "Un improbable dúo de hermanastros, uno un impulsivo detective y el otro un disciplinado, se ven atraídos por el asesinato de su padre en Hawai, lo que les lleva a un peligroso viaje para desenmascarar una conspiración de largo alcance.",
+   "popularity": 46.1874,
+   "poster_path": "/ttEESBvVrO8ngZr19qp6eBMVS9F.jpg",
+   "release_date": "2026-01-28",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.082,
+   "vote_count": 1319
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/hlxduUs8y9icWGMzYCDLcYHEQ2u.jpg",
+   "genre_ids": [
+    53
+   ],
+   "id": 985939,
+   "title": "Fall",
+   "original_language": "en",
+   "original_title": "Fall",
+   "overview": "Para las mejores amigas Becky y Hunter, la vida trata de superar tus miedos y empujar tus límites. Sin embargo, después de subir hasta la cima de una torre de comunicaciones abandonada, se encuentran atrapadas y sin forma de bajar. A 600 metros del suelo y totalmente alejadas de la civilización, las chicas pondrán a prueba sus habilidades de escaladoras expertas y lucharán desesperadamente por sobrevivir aunque lo tengan todo en contra. ¿Lo conseguirán?",
+   "popularity": 45.6773,
+   "poster_path": "/aOidBN8Ch4LD6M9HyvDjTqM9fLF.jpg",
+   "release_date": "2022-08-11",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.155,
+   "vote_count": 5014
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/ecKQlAEG95k62SMGhvX83oEqANK.jpg",
+   "genre_ids": [
+    27,
+    53
+   ],
+   "id": 138843,
+   "title": "Expediente Warren",
+   "original_language": "en",
+   "original_title": "The Conjuring",
+   "overview": "Basada en una historia real documentada por los reputados demonólogos Ed y Lorraine Warren. Narra los encuentros sobrenaturales que vivió la familia Perron en su casa de Rhode Island a principios de los 70. El matrimonio Warren, investigadores de renombre en el mundo de los fenómenos paranormales, acudieron a la llamada de esta familia aterrorizada por la presencia en su granja de un ser maligno.",
+   "popularity": 43.1297,
+   "poster_path": "/sKuHxkCogdk6YWzTyXYPoo9qd9n.jpg",
+   "release_date": "2013-07-18",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.5,
+   "vote_count": 13211
+  },
+  {
+   "adult": false,
+   "backdrop_path": "/qVgZu5BTx6pu4owCvVOm4zjTfOi.jpg",
+   "genre_ids": [
+    878,
+    12
+   ],
+   "id": 438631,
+   "title": "Dune",
+   "original_language": "en",
+   "original_title": "Dune",
+   "overview": "En un lejano futuro, la galaxia conocida es gobernada mediante un sistema feudal de casas nobles bajo el mandato del Emperador. Las alianzas y la política giran entorno a un pequeño planeta, Dune,  del que extrae la 'especia melange', la materia prima que permite los viajes espaciales. La Casa Atreides, bajo el mandato del Duque Leto Atreides recibe el encargo de custodiar el planeta, relevando en la encomienda a sus históricos enemigos, los Harkonnen. Paul Atreides, hijo del duque, se verá atrapado en las intrigas políticas mientras descubre el destino que le deparan los desiertos de Dune.",
+   "popularity": 47.7561,
+   "poster_path": "/szcew6yyjcDvaL0isaPBk2e3nkF.jpg",
+   "release_date": "2021-09-15",
+   "softcore": false,
+   "video": false,
+   "vote_average": 7.784,
+   "vote_count": 15771
+  }
+ ],
+ "total_pages": 425,
+ "total_results": 8485
+}

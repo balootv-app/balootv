@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BalooTV: la tele con las orejas de Balú (tablero 9 del lienzo de diseño). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp" android:height="120dp" android:viewportWidth="400" android:viewportHeight="240">
+        <path android:fillColor="#FFFFFF" android:pathData="M146,92 L136,34 Q135,27 141,31 L190,84 Z"/>
+        <path android:fillColor="#FFFFFF" android:pathData="M214,86 L240,44 Q244,38 250,42 L286,66 Q291,70 285,72 L258,70 L254,92 Z"/>
+        <path android:fillColor="#D7DEDD" android:pathData="M258,70 L285,72 Q291,70 286,66 L262,50 Z"/>
+        <path android:fillColor="#FFFFFF" android:pathData="M128,108 Q128,80 156,80 L244,80 Q272,80 272,108 L272,158 Q272,186 244,186 L156,186 Q128,186 128,158 Z"/>
+        <group android:name="cara">
+            <clip-path android:pathData="M128,108 Q128,80 156,80 L244,80 Q272,80 272,108 L272,158 Q272,186 244,186 L156,186 Q128,186 128,158 Z"/>
+            <path android:fillColor="#000000" android:pathData="M120,74 L192,74 L192,120 Q188,138 166,141 Q140,142 120,132 Z"/>
+            <path android:fillColor="#000000" android:pathData="M280,74 L208,74 L208,120 Q212,138 234,141 Q260,142 280,132 Z"/>
+        </group>
+        <path android:fillColor="#C8762E" android:pathData="M163,124 A7,3.6 0 1,0 177,124 A7,3.6 0 1,0 163,124 Z"/>
+        <path android:fillColor="#C8762E" android:pathData="M223,124 A7,3.6 0 1,0 237,124 A7,3.6 0 1,0 223,124 Z"/>
+        <path android:fillColor="#000000" android:pathData="M193,149 Q191,144 196,146 L212,155 Q216,157.5 212,160 L196,169 Q191,171 193,166 Z"/>
+</vector>

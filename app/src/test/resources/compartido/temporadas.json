@@ -1,0 +1,236 @@
+{
+  "contrato": "C3 · temporada nueva y próximos estrenos (diseño 2026-10-31)",
+  "casos": [
+    {
+      "nombre": "estreno hace 41 días: temporada nueva",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 1,
+          "tmdb": 2001,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "1": "2025-01-01",
+            "2": "2026-09-20"
+          }
+        }
+      ],
+      "temporadaNueva": [
+        {
+          "trakt": 1,
+          "temporada": 2,
+          "fecha": "2026-09-20"
+        }
+      ],
+      "proximos": []
+    },
+    {
+      "nombre": "estreno hace 42 días: nada",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 2,
+          "tmdb": 2002,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "2": "2026-09-19"
+          }
+        }
+      ],
+      "temporadaNueva": [],
+      "proximos": []
+    },
+    {
+      "nombre": "estreno hoy: temporada nueva y no próximo",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 3,
+          "tmdb": 2003,
+          "ultimaTemporadaVista": 2,
+          "estrenos": {
+            "3": "2026-10-31"
+          }
+        }
+      ],
+      "temporadaNueva": [
+        {
+          "trakt": 3,
+          "temporada": 3,
+          "fecha": "2026-10-31"
+        }
+      ],
+      "proximos": []
+    },
+    {
+      "nombre": "estreno mañana: solo próximo",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 4,
+          "tmdb": 2004,
+          "ultimaTemporadaVista": 2,
+          "estrenos": {
+            "3": "2026-11-01"
+          }
+        }
+      ],
+      "temporadaNueva": [],
+      "proximos": [
+        {
+          "trakt": 4,
+          "temporada": 3,
+          "fecha": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "nombre": "estreno dentro de meses: próximo",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 5,
+          "tmdb": 2005,
+          "ultimaTemporadaVista": 3,
+          "estrenos": {
+            "4": "2027-03-14"
+          }
+        }
+      ],
+      "temporadaNueva": [],
+      "proximos": [
+        {
+          "trakt": 5,
+          "temporada": 4,
+          "fecha": "2027-03-14"
+        }
+      ]
+    },
+    {
+      "nombre": "la siguiente sin fecha y la de después con fecha: nada",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 6,
+          "tmdb": 2006,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "3": "2026-11-20"
+          }
+        }
+      ],
+      "temporadaNueva": [],
+      "proximos": []
+    },
+    {
+      "nombre": "sin temporada vista: nada",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 7,
+          "tmdb": 2007,
+          "ultimaTemporadaVista": 0,
+          "estrenos": {
+            "1": "2026-10-20"
+          }
+        }
+      ],
+      "temporadaNueva": [],
+      "proximos": []
+    },
+    {
+      "nombre": "ya vista la temporada estrenada: nada",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 8,
+          "tmdb": 2008,
+          "ultimaTemporadaVista": 2,
+          "estrenos": {
+            "2": "2026-10-10"
+          }
+        }
+      ],
+      "temporadaNueva": [],
+      "proximos": []
+    },
+    {
+      "nombre": "DAN DA DAN: la temporada 2 de la tele es la 1 de TMDB, no hay temporada nueva",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 9,
+          "tmdb": 2009,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "1": "2024-10-03"
+          }
+        }
+      ],
+      "temporadaNueva": [],
+      "proximos": []
+    },
+    {
+      "nombre": "orden: nuevas de la más reciente, próximos de la más cercana",
+      "hoy": "2026-10-31",
+      "series": [
+        {
+          "trakt": 10,
+          "tmdb": 2010,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "2": "2026-10-01"
+          }
+        },
+        {
+          "trakt": 11,
+          "tmdb": 2011,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "2": "2026-10-25"
+          }
+        },
+        {
+          "trakt": 12,
+          "tmdb": 2012,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "2": "2027-01-10"
+          }
+        },
+        {
+          "trakt": 13,
+          "tmdb": 2013,
+          "ultimaTemporadaVista": 1,
+          "estrenos": {
+            "2": "2026-12-01"
+          }
+        }
+      ],
+      "temporadaNueva": [
+        {
+          "trakt": 11,
+          "temporada": 2,
+          "fecha": "2026-10-25"
+        },
+        {
+          "trakt": 10,
+          "temporada": 2,
+          "fecha": "2026-10-01"
+        }
+      ],
+      "proximos": [
+        {
+          "trakt": 13,
+          "temporada": 2,
+          "fecha": "2026-12-01"
+        },
+        {
+          "trakt": 12,
+          "temporada": 2,
+          "fecha": "2027-01-10"
+        }
+      ]
+    }
+  ]
+}
