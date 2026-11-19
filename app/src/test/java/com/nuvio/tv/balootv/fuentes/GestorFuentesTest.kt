@@ -5,7 +5,9 @@ import com.nuvio.tv.balootv.cuenta.ClaveTorbox
 import com.nuvio.tv.core.network.NetworkResult
 import com.nuvio.tv.domain.model.Addon
 import com.nuvio.tv.domain.model.AddonResource
+import com.nuvio.tv.domain.model.Stream
 import com.nuvio.tv.domain.repository.AddonRepository
+import com.nuvio.tv.domain.repository.StreamRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -35,9 +37,16 @@ class GestorFuentesTest {
         coEvery { it.actual() } returns "k1"
     }
 
+    private val enlaces = mockk<StreamRepository>(relaxed = true)
+
+    private fun enlace(url: String? = null, infoHash: String? = null) = Stream(
+        name = "x", title = null, description = null, url = url, ytId = null, infoHash = infoHash, fileIdx = null,
+        externalUrl = null, behaviorHints = null, addonName = "a", addonLogo = null,
+    )
+
     private fun TestScope.gestor(): Pair<GestorFuentes, AlmacenFuentes> {
         val almacen = AlmacenFuentes(PreferenceDataStoreFactory.create(scope = backgroundScope) { carpeta.newFile("f.preferences_pb") })
-        return GestorFuentes(repo, almacen, clave) to almacen
+        return GestorFuentes(repo, almacen, clave, enlaces) to almacen
     }
 
     @Test
@@ -57,6 +66,32 @@ class GestorFuentesTest {
         coVerify(exactly = 1) { repo.addAddon("https://a.example/torbox=k1/manifest.json") }
         coVerify(exactly = 1) { repo.addAddon(any()) }
         assertEquals(listOf("https://a.example/torbox={torbox}/manifest.json"), almacen.actuales())
+    }
+
+    @Test
+    fun `una fuente de solo torrents sin la parte de TorBox no se anade y se dice por que`() = runTest {
+        val (g, almacen) = gestor()
+        coEvery { repo.fetchAddon("https://t.example") } returns NetworkResult.Success(addon("https://t.example", "stream"))
+        coEvery { enlaces.getStreamsFromAddon(any(), "movie", "tt0111161") } returns NetworkResult.Success(listOf(enlace(infoHash = "abc")))
+        coEvery { repo.fetchAddon("https://w.example") } returns NetworkResult.Success(addon("https://w.example", "stream"))
+
+        val r = g.anadir("https://t.example/manifest.json")
+        assertEquals(listOf(Comprobacion.SinTorbox("t.example")), r.map { it.comprobacion })
+        coVerify(exactly = 0) { repo.addAddon(any()) }
+        assertEquals(emptyList<String>(), almacen.actuales())
+
+        // La misma clase de fuente con enlaces web (la clave ya va dentro, u otra que no es de torrents) sí entra.
+        coEvery { enlaces.getStreamsFromAddon(match { it.baseUrl == "https://w.example" }, "movie", "tt0111161") } returns
+            NetworkResult.Success(listOf(enlace(url = "https://w.example/play/1", infoHash = "abc")))
+        assertEquals(listOf(Comprobacion.Valida("w.example")), g.anadir("https://w.example/manifest.json").map { it.comprobacion })
+    }
+
+    @Test
+    fun `si la pregunta de prueba falla, la fuente se acepta`() = runTest {
+        val (g, _) = gestor()
+        coEvery { repo.fetchAddon(any()) } returns NetworkResult.Success(addon("https://a.example", "stream"))
+        coEvery { enlaces.getStreamsFromAddon(any(), any(), any()) } returns NetworkResult.Error("timeout")
+        assertEquals(listOf(Comprobacion.Valida("a.example")), g.anadir("https://a.example/manifest.json").map { it.comprobacion })
     }
 
     @Test

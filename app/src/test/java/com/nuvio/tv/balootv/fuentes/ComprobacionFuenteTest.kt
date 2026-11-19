@@ -3,6 +3,7 @@ package com.nuvio.tv.balootv.fuentes
 import com.nuvio.tv.core.network.NetworkResult
 import com.nuvio.tv.domain.model.Addon
 import com.nuvio.tv.domain.model.AddonResource
+import com.nuvio.tv.domain.model.Stream
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
@@ -65,5 +66,39 @@ class ComprobacionFuenteTest {
     @Test
     fun `el sitio se ensena sin la clave`() {
         assertEquals("a.example", ComprobacionFuente.sitio("https://a.example/torbox=secreto/manifest.json"))
+    }
+
+    private fun enlace(url: String? = null, infoHash: String? = null) = Stream(
+        name = "x", title = null, description = null, url = url, ytId = null, infoHash = infoHash, fileIdx = null,
+        externalUrl = null, behaviorHints = null, addonName = "a", addonLogo = null,
+    )
+
+    @Test
+    fun `solo torrents cuando ningun enlace tiene direccion web`() {
+        assertEquals(true, ComprobacionFuente.soloTorrents(listOf(enlace(infoHash = "abc"), enlace(url = "magnet:?xt=urn:btih:abc"))))
+        // Con la parte de TorBox los enlaces llevan dirección web aunque traigan también el hash.
+        assertEquals(false, ComprobacionFuente.soloTorrents(listOf(enlace(url = "https://a.example/play/1", infoHash = "abc"))))
+        assertEquals(false, ComprobacionFuente.soloTorrents(listOf(enlace(infoHash = "abc"), enlace(url = "https://a.example/1"))))
+        // Sin enlaces no se sabe: no se rechaza.
+        assertEquals(false, ComprobacionFuente.soloTorrents(emptyList()))
+    }
+
+    @Test
+    fun `solo se pregunta a las fuentes sin la parte de TorBox`() {
+        val peliculas = addon("f", "stream").copy(types = emptyList(), idPrefixes = listOf("tt"))
+        assertEquals("movie" to "tt0111161", ComprobacionFuente.sondeo("https://a.example/manifest.json", peliculas))
+        assertNull(ComprobacionFuente.sondeo("https://a.example/torbox={torbox}/manifest.json", peliculas))
+        // Solo series: se pregunta por un episodio.
+        val series = addon("f").copy(resources = listOf(AddonResource("stream", listOf("series"), listOf("tt"))))
+        assertEquals("series" to "tt0903747:1:1", ComprobacionFuente.sondeo("https://a.example/manifest.json", series))
+        // Que no busca por IMDb: no hay a quién preguntar y se acepta.
+        val otra = addon("f").copy(resources = listOf(AddonResource("stream", emptyList(), listOf("kitsu"))))
+        assertNull(ComprobacionFuente.sondeo("https://a.example/manifest.json", otra))
+    }
+
+    @Test
+    fun `el aviso de fuente sin TorBox dice que le falta el marcador`() {
+        val t = ComprobacionFuente.texto(Comprobacion.SinTorbox("Mi fuente"))
+        assertEquals(true, "no está preparada para TorBox" in t && "{torbox}" in t)
     }
 }

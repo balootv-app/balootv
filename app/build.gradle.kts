@@ -93,6 +93,10 @@ val paqueteCasa: String = env("BALOOTV_PAQUETE_CASA")?.trim()?.takeIf { it.isNot
 // local.properties lo cambia por otra dirección (pruebas con una publicación de mentira).
 // TMDB de la edicion publica: TMDB_API_KEY_PUBLICA. Sin ella, la publica de release no se compila (nunca cae en la de casa).
 val tmdbPublica: String = localProperties.getProperty("TMDB_API_KEY_PUBLICA", "").trim()
+// Trakt de la edicion publica: TRAKT_CLIENT_ID_PUBLICA (el id de la app de Trakt del proyecto, cuando Trakt la abra a
+// todos). Sin ella, la de siempre: cambiar de id es solo poner este valor en secrets.properties.
+val traktPublica: String = localProperties.getProperty("TRAKT_CLIENT_ID_PUBLICA", "").trim()
+    .ifEmpty { localProperties.getProperty("TRAKT_CLIENT_ID", "").trim() }
 gradle.taskGraph.whenReady {
     if (tmdbPublica.isEmpty() && allTasks.any { it.path.startsWith(":app:") && it.name.contains("PublicaRelease") }) {
         throw GradleException(
@@ -139,12 +143,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         minSdk = 24
         targetSdk = 36
-        versionCode = 47
-        versionName = "1.1.0"
+        versionCode = 48
+        versionName = "1.1.1"
         // Solo castellano (y el inglés por defecto como reserva de textos).
         androidResources.localeFilters += listOf("es")
 
-        buildConfigField("String", "TRAKT_CLIENT_ID", "\"${localProperties.getProperty("TRAKT_CLIENT_ID", "")}\"")
         buildConfigField("String", "TRAKT_API_URL", "\"${localProperties.getProperty("TRAKT_API_URL", "https://api.trakt.tv/")}\"")
         buildConfigField("String", "TRAKT_REDIRECT_URI", "\"${localProperties.getProperty("TRAKT_REDIRECT_URI", "urn:ietf:wg:oauth:2.0:oob")}\"")
         buildConfigField("boolean", "DOVI_NATIVE_ENABLED", enableDoviNative.toString())
@@ -178,6 +181,7 @@ android {
             // La clave de TMDB del proyecto (o la tuya si compilas por tu cuenta), nunca la de casa.
             buildConfigField("String", "TMDB_API_KEY", buildConfigString(tmdbPublica))
             buildConfigField("String", "TORBOX_API_KEY", "\"\"")
+            buildConfigField("String", "TRAKT_CLIENT_ID", buildConfigString(traktPublica))
             buildConfigField("String", "TRAKT_CLIENT_SECRET", "\"\"")
             buildConfigField("String", "FUENTES_DE_SERIE", "\"\"")
             buildConfigField("String", "ACTUALIZACIONES_URL", buildConfigString(urlActualizaciones))
@@ -192,6 +196,7 @@ android {
             buildConfigField("String", "TMDB_API_KEY", buildConfigString(localProperties.getProperty("TMDB_API_KEY", "")))
             // La clave de TorBox con la que sale la APK; Ajustes puede cambiarla (balootv/cuenta/ClaveTorbox.kt).
             buildConfigField("String", "TORBOX_API_KEY", buildConfigString(localProperties.getProperty("TORBOX_API_KEY", "")))
+            buildConfigField("String", "TRAKT_CLIENT_ID", buildConfigString(localProperties.getProperty("TRAKT_CLIENT_ID", "")))
             buildConfigField("String", "TRAKT_CLIENT_SECRET", buildConfigString(localProperties.getProperty("TRAKT_CLIENT_SECRET", "")))
             // Plantillas de fuentes, una por linea, con {torbox} donde va la clave (balootv/fuentes/PlantillaFuente.kt).
             buildConfigField("String", "FUENTES_DE_SERIE", "\"$fuentesDeCasa\"")

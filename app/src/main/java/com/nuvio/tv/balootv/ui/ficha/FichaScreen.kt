@@ -44,7 +44,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.nuvio.tv.balootv.ui.componentes.Text
 import coil3.compose.AsyncImage
 import com.nuvio.tv.balootv.ui.componentes.veloDoble
-import com.nuvio.tv.R
 import com.nuvio.tv.balootv.ficha.Saga
 import com.nuvio.tv.balootv.ficha.TextosFicha
 import com.nuvio.tv.balootv.ui.componentes.BotonCristal
@@ -193,7 +192,8 @@ fun FichaScreen(
                 if (sinFuentes) { onAnadirFuentes(); return@reproducir }
                 val videoId = video?.id ?: meta.id
                 if (!disponibilidad.canStream(meta.apiType, videoId, meta.id, video)) {
-                    Toast.makeText(context, R.string.playback_unavailable_message, Toast.LENGTH_SHORT).show()
+                    val texto = com.nuvio.tv.balootv.fuentes.TextoNoReproducible.de(videoId, disponibilidad.addons)
+                    Toast.makeText(context, texto, Toast.LENGTH_LONG).show()
                     return@reproducir
                 }
                 val accion = if (manual) onPlayManuallyClick else onPlayClick
@@ -427,7 +427,7 @@ private fun Cabecera(
         ) {
             plataformas.forEach { p -> LogoPlataforma(InsigniaPlataforma(p.nombre, LOGOS + p.logo), Modifier.size(22.dp)) }
         }
-        meta.description?.let { Sinopsis(it, meta.name, meta.backdropUrl ?: meta.poster, Modifier.width(430.dp)) }
+        meta.description?.let(com.nuvio.tv.balootv.ficha.SinopsisSinAnuncio::limpiar)?.let { Sinopsis(it, meta.name, meta.backdropUrl ?: meta.poster, Modifier.width(430.dp)) }
         Spacer(Modifier.height(4.dp))
         // Los botones pueden pasar del margen derecho del texto: "Continuar" con su detalle aplastaba el Tráiler.
         Row(

@@ -1036,7 +1036,6 @@ private fun PlaybackNavHost(
         composable(Screen.Settings.route) {
             // BalooTV: una sola pantalla de Ajustes con seis cosas (F4 §6, tablero 10).
             com.nuvio.tv.balootv.ajustes.AjustesBalooTVScreen(
-                onAbrirTrakt = { navController.navigate(Screen.Tracking.route) },
                 onAbrirFuentes = { navController.navigate(Screen.Fuentes.route) },
                 onRepetirPrimerosPasos = { navController.navigate(Screen.PrimerArranque.route) },
                 onVolver = { navController.popBackStack() }
@@ -1045,7 +1044,6 @@ private fun PlaybackNavHost(
 
         composable(Screen.PrimerArranque.route) {
             com.nuvio.tv.balootv.arranque.PrimerArranqueScreen(
-                onAbrirTrakt = { navController.navigate(Screen.Tracking.route) },
                 onTerminar = {
                     navController.navigate(Screen.Home.route) {
                         popUpTo(Screen.PrimerArranque.route) { inclusive = true }

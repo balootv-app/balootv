@@ -93,7 +93,7 @@ fun PantallaPausa(
                 }
                 val linea = listOfNotNull(anio?.takeIf { !esEpisodio && it.isNotBlank() }, queda().takeIf { it.isNotBlank() }).joinToString(" · ")
                 if (linea.isNotEmpty()) Text(linea, fontSize = EscalaTv.PIE_1, color = Color.White.copy(alpha = 0.75f))
-                sinopsis?.takeIf { it.isNotBlank() }?.let {
+                sinopsis?.takeIf { it.isNotBlank() }?.let(com.nuvio.tv.balootv.ficha.SinopsisSinAnuncio::limpiar)?.let {
                     Text(it, fontSize = EscalaTv.CUERPO, color = Color.White.copy(alpha = 0.82f), maxLines = 4, overflow = TextOverflow.Ellipsis)
                 }
                 Text("Pulsa OK para seguir viendo", Modifier.padding(top = 6.dp), fontSize = EscalaTv.PIE_2, color = Color.White.copy(alpha = 0.5f))

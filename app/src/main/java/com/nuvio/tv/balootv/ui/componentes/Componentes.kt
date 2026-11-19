@@ -262,7 +262,7 @@ fun CabeceraEnfocada(item: MetaPreview?, nota: Float?, modifier: Modifier = Modi
             nota?.let { NotaImdbEtiqueta(it) }
             item.releaseInfo?.let { Text(it, fontSize = EscalaTv.PIE_2, color = Color.White.copy(alpha = 0.8f)) }
         }
-        item.description?.let {
+        item.description?.let(com.nuvio.tv.balootv.ficha.SinopsisSinAnuncio::limpiar)?.let {
             Text(it, fontSize = EscalaTv.PIE_2, color = Color.White.copy(alpha = 0.78f), maxLines = 2, overflow = TextOverflow.Ellipsis)
         }
     }

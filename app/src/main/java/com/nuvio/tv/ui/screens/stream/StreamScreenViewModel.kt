@@ -1240,6 +1240,11 @@ class StreamScreenViewModel @Inject constructor(
             return resolveYouTubeStreamForPlayback(stream)
         }
         if (!directDebridResolver.shouldResolveToPlayableStream(stream)) {
+            // BalooTV: un torrent sin TorBox no se puede reproducir; se dice al momento en vez de no hacer nada.
+            if (stream.needsLocalDebridResolve()) {
+                showDirectDebridPlaybackError(com.nuvio.tv.balootv.fuentes.TextoNoReproducible.ENLACE_TORRENT, refreshStreams = false)
+                return null
+            }
             Log.d(TAG, "resolveStreamForPlayback: no debrid resolve needed, using direct URL")
             return getStreamForPlayback(stream, saveLastLink)
         }

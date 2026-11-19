@@ -49,6 +49,8 @@ class ServidorFuentesTest {
         val (codigo, html) = pedir("/${servidor.codigo}")
         assertEquals(200, codigo)
         assertTrue(html.contains("<textarea name=\"fuentes\""))
+        // La guía de fuentes, como enlace que se puede tocar.
+        assertTrue(html.contains("<a href=\"https://balootv-app.github.io/fuentes\">balootv-app.github.io/fuentes</a>"))
     }
 
     @Test

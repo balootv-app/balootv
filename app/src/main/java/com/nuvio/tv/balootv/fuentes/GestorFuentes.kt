@@ -2,7 +2,10 @@ package com.nuvio.tv.balootv.fuentes
 
 import com.nuvio.tv.balootv.cuenta.ClaveTorbox
 import com.nuvio.tv.domain.model.Addon
+import com.nuvio.tv.core.network.NetworkResult
 import com.nuvio.tv.domain.repository.AddonRepository
+import com.nuvio.tv.domain.repository.StreamRepository
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
@@ -23,6 +26,7 @@ class GestorFuentes @Inject constructor(
     private val repo: AddonRepository,
     private val almacen: AlmacenFuentes,
     private val claveTorbox: ClaveTorbox,
+    private val enlaces: StreamRepository,
 ) {
     private val cerrojo = Mutex()
 
@@ -44,7 +48,11 @@ class GestorFuentes @Inject constructor(
             val previa = ComprobacionFuente.antesDeLaRed(plantilla, vistas, clave)
             if (previa != null || plantilla == null) return@map ResultadoFuente(sitio, previa ?: Comprobacion.NoEsDireccion)
             val url = PlantillaFuente.rellenar(plantilla, clave)
-            val c = ComprobacionFuente.juzgar(repo.fetchAddon(url.removeSuffix("/manifest.json")))
+            val respuesta = repo.fetchAddon(url.removeSuffix("/manifest.json"))
+            val c = ComprobacionFuente.juzgar(respuesta).let { c ->
+                val addon = (respuesta as? NetworkResult.Success)?.data
+                if (c is Comprobacion.Valida && addon != null && soloTorrents(plantilla, addon)) Comprobacion.SinTorbox(c.nombre) else c
+            }
             if (c is Comprobacion.Valida) {
                 repo.addAddon(url)
                 almacen.anadir(plantilla)
@@ -52,6 +60,13 @@ class GestorFuentes @Inject constructor(
             }
             ResultadoFuente(sitio, c)
         }
+    }
+
+    /** Pregunta a la fuente por un título conocido; si no contesta a tiempo, se da por buena. */
+    private suspend fun soloTorrents(plantilla: String, addon: Addon): Boolean {
+        val (tipo, id) = ComprobacionFuente.sondeo(plantilla, addon) ?: return false
+        val r = withTimeoutOrNull(SONDEO_MS) { enlaces.getStreamsFromAddon(addon, tipo, id) }
+        return r is NetworkResult.Success && ComprobacionFuente.soloTorrents(r.data)
     }
 
     /** Quita la fuente instalada en [baseUrl] y, si la puso el usuario, su plantilla. */
@@ -63,6 +78,9 @@ class GestorFuentes @Inject constructor(
     }
 
     companion object {
+        /** Corto: se pregunta fuente a fuente y la página del móvil espera como mucho un minuto a todo el envío. */
+        private const val SONDEO_MS = 4_000L
+
         /** Si [a] da enlaces, o aún no ha contestado (sin manifiesto todavía) y puede darlos. */
         fun daEnlaces(a: Addon): Boolean = a.enabled && (a.resources.isEmpty() || a.resources.any { it.name == "stream" })
 

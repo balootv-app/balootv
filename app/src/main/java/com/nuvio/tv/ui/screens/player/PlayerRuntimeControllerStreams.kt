@@ -135,6 +135,8 @@ internal fun PlayerRuntimeController.showSourcesPanel() {
     _uiState.update {
         it.copy(
             showSourcesPanel = true,
+            // BalooTV: el aviso de la última elección no se queda al volver a abrir el panel.
+            sourceStreamsError = null,
             showControls = true,
             showAudioOverlay = false,
             showSubtitleOverlay = false,
@@ -797,6 +799,7 @@ internal fun PlayerRuntimeController.switchToSourceStream(
     if (stream.isTorrent()) {
         debridResolveJob?.cancel()
         _uiState.update { it.copy(isLoadingSourceStreams = true, sourceStreamsError = null) }
+        // BalooTV: sin TorBox para el torrent no hay nada que esperar; se dice ya en el panel por qué.
         debridResolveJob = scope.launch {
             val resolved = resolveDirectDebridStreamIfNeeded(stream, currentSeason, currentEpisode)
             debridResolveJob = null
@@ -806,7 +809,11 @@ internal fun PlayerRuntimeController.switchToSourceStream(
                 _uiState.update {
                     it.copy(
                         isLoadingSourceStreams = false,
-                        sourceStreamsError = context.getString(com.nuvio.tv.R.string.player_stream_error_invalid_url)
+                        sourceStreamsError = if (!directDebridResolver.shouldResolveToPlayableStream(stream)) {
+                            com.nuvio.tv.balootv.fuentes.TextoNoReproducible.ENLACE_TORRENT
+                        } else {
+                            context.getString(com.nuvio.tv.R.string.player_stream_error_invalid_url)
+                        }
                     )
                 }
             }

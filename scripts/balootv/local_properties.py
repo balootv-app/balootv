@@ -16,6 +16,7 @@ COPIED = [
     "TMDB_API_KEY_PUBLICA",  # la del proyecto, para la edición pública (TMDB_API_KEY es la de casa)
     "TORBOX_API_KEY",
     "TRAKT_CLIENT_ID",
+    "TRAKT_CLIENT_ID_PUBLICA",  # la app de Trakt del proyecto para la pública; sin ella, la pública usa TRAKT_CLIENT_ID
     "TRAKT_CLIENT_SECRET",
     "BALOOTV_RELEASE_STORE_FILE",
     "BALOOTV_RELEASE_KEY_ALIAS",

@@ -37,14 +37,17 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.nuvio.tv.R
 import com.nuvio.tv.balootv.ajustes.FONDO
 import com.nuvio.tv.balootv.ajustes.Fila
+import com.nuvio.tv.balootv.ajustes.PanelTrakt
 import com.nuvio.tv.balootv.ajustes.PanelVinculo
 import com.nuvio.tv.balootv.ajustes.Vinculacion
 import com.nuvio.tv.balootv.cuenta.EstadoTorbox
+import com.nuvio.tv.balootv.cuenta.PasoTrakt
 import com.nuvio.tv.balootv.ui.componentes.EscalaTv
 import com.nuvio.tv.balootv.ui.componentes.Text
 import com.nuvio.tv.balootv.ui.fuentes.ContenidoFuentes
 import com.nuvio.tv.balootv.ui.fuentes.FuentesViewModel
 import com.nuvio.tv.balootv.ui.fuentes.GUIA_FUENTES
+import com.nuvio.tv.balootv.ui.fuentes.LineaGuiaFuentes
 
 private fun PasoPrimerArranque.titulo() = when (this) {
     PasoPrimerArranque.BIENVENIDA -> "Te damos la bienvenida a BalooTV"
@@ -66,7 +69,6 @@ private fun PasoPrimerArranque.explicacion() = when (this) {
  */
 @Composable
 fun PrimerArranqueScreen(
-    onAbrirTrakt: () -> Unit,
     onTerminar: () -> Unit,
     viewModel: PrimerArranqueViewModel = hiltViewModel(),
 ) {
@@ -74,6 +76,8 @@ fun PrimerArranqueScreen(
     val vinculacion by viewModel.vinculacion.collectAsState()
     val torbox by viewModel.torbox.collectAsState()
     val trakt by viewModel.usuarioTrakt.collectAsState()
+    val vinculacionTrakt by viewModel.vinculacionTrakt.collectAsState()
+    val torboxLista = torbox == EstadoTorbox.Funciona || vinculacion == Vinculacion.Hecha
     val foco = remember { FocusRequester() }
     val terminar = { viewModel.terminar(onTerminar) }
     val avanzar = { AlmacenPrimerArranque.siguiente(paso)?.let { paso = it } ?: terminar() }
@@ -83,12 +87,25 @@ fun PrimerArranqueScreen(
         AlmacenPrimerArranque.anterior(paso)?.let { paso = it }
     }
     val focusManager = LocalFocusManager.current
-    LaunchedEffect(paso) {
+    // Al aprobar TorBox con el código, la fila enfocada desaparece y sale «Siguiente»: el foco tiene que caer ahí (si
+    // no, OK no hace nada hasta pulsar una flecha). Igual al conectar Trakt.
+    LaunchedEffect(paso, torboxLista, trakt != null) {
         if (paso == PasoPrimerArranque.TORBOX && torbox == null && vinculacion == null) viewModel.vincularTorbox()
         // Si la fila nueva es la única enfocable, Compose le da el foco al quitar la anterior, antes de que su Surface
         // escuche: lo tiene pero no se pinta, y volver a pedirlo no hace nada. Se suelta y se pide de nuevo.
         focusManager.clearFocus(force = true)
         runCatching { foco.requestFocus() }
+    }
+
+    // Trakt aprobado desde el móvil: se ve «Listo» un momento y se sigue solo al paso de las fuentes.
+    LaunchedEffect(vinculacionTrakt) {
+        if (paso == PasoPrimerArranque.TRAKT && vinculacionTrakt is PasoTrakt.Hecho) {
+            kotlinx.coroutines.delay(1_500)
+            // Si en ese rato ya pulsó «Siguiente», no se avanza otra vez (cerraría la guía sin ver las fuentes).
+            if (paso != PasoPrimerArranque.TRAKT) return@LaunchedEffect
+            viewModel.cancelarVinculo()
+            avanzar()
+        }
     }
 
     Box(Modifier.fillMaxSize().background(Color.Black).background(FONDO)) {
@@ -106,6 +123,7 @@ fun PrimerArranqueScreen(
                 Puntos(paso)
                 Text(paso.titulo(), color = Color.White, fontSize = EscalaTv.TITULO_3, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
                 Text(paso.explicacion(), color = Color.White.copy(alpha = 0.65f), fontSize = EscalaTv.CUERPO, textAlign = TextAlign.Center)
+                if (paso == PasoPrimerArranque.FUENTES) LineaGuiaFuentes()
             }
             Spacer(Modifier.width(60.dp))
             Column(Modifier.fillMaxWidth().padding(top = 40.dp), verticalArrangement = Arrangement.spacedBy(7.dp)) {
@@ -114,8 +132,7 @@ fun PrimerArranqueScreen(
                         Fila("Empezar", "", Modifier.focusRequester(foco)) { avanzar() }
                     }
                     PasoPrimerArranque.TORBOX -> {
-                        val lista = torbox == EstadoTorbox.Funciona || vinculacion == Vinculacion.Hecha
-                        if (lista) {
+                        if (torboxLista) {
                             Fila("Siguiente", "TorBox vinculado", Modifier.focusRequester(foco)) { avanzar() }
                             Fila("Usar otra cuenta", "") { viewModel.vincularTorbox() }
                         } else {
@@ -132,8 +149,13 @@ fun PrimerArranqueScreen(
                         if (t != null) {
                             Fila("Siguiente", "Conectado · $t", Modifier.focusRequester(foco)) { avanzar() }
                         } else {
-                            Fila("Conectar Trakt", "", Modifier.focusRequester(foco)) { onAbrirTrakt() }
-                            Fila("Saltar", "") { avanzar() }
+                            val enCurso = vinculacionTrakt
+                            Fila(
+                                when (enCurso) { null -> "Conectar Trakt"; is PasoTrakt.Fallo -> "Volver a intentarlo"; else -> "Pedir otro código" },
+                                "", Modifier.focusRequester(foco),
+                            ) { viewModel.vincularTrakt() }
+                            Fila("Saltar", "") { viewModel.cancelarVinculo(); avanzar() }
+                            enCurso?.let { PanelTrakt(it) }
                         }
                     }
                     PasoPrimerArranque.FUENTES -> {

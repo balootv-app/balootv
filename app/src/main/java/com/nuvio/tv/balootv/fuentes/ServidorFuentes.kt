@@ -174,7 +174,7 @@ internal object Paginas {
         p{color:#ffffffb3}textarea{box-sizing:border-box;width:100%;min-height:11rem;border-radius:12px;border:1px solid #ffffff2a;
         background:#ffffff12;color:#fff;font:15px/1.4 ui-monospace,monospace;padding:12px}
         button{width:100%;margin-top:14px;padding:14px;border:0;border-radius:12px;background:#fff;color:#000;font-size:1.05rem;font-weight:600}
-        li{margin:.4rem 0}.ok{color:#9be29b}.no{color:#ffb3a8}code{background:#ffffff14;padding:1px 5px;border-radius:5px}
+        a{color:#9cc8ff}li{margin:.4rem 0}.ok{color:#9be29b}.no{color:#ffb3a8}code{background:#ffffff14;padding:1px 5px;border-radius:5px}
     """
 
     private fun pagina(titulo: String, cuerpo: String) =
@@ -186,6 +186,7 @@ internal object Paginas {
         "<h1>Añadir fuentes a BalooTV</h1>" +
             "<p>Pega la dirección de cada addon de Stremio, una por línea. Si lleva tu clave de TorBox, puedes escribir " +
             "<code>{torbox}</code> en su lugar y la tele pone la suya.</p>" +
+            "<p>${GuiaFuentes.PREGUNTA} <a href=\"${GuiaFuentes.DIRECCION}\">${GuiaFuentes.corta}</a></p>" +
             (aviso?.let { "<p class=\"no\">${escapar(it)}</p>" } ?: "") +
             "<form method=\"post\" action=\"$accion\"><textarea name=\"fuentes\" autofocus autocomplete=\"off\" autocapitalize=\"off\" " +
             "spellcheck=\"false\" placeholder=\"https://…/manifest.json\"></textarea><button type=\"submit\">Enviar a la tele</button></form>",

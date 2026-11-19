@@ -23,7 +23,7 @@ from urllib.parse import urlsplit
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FUERA = os.path.join(ROOT, "scripts", "balootv", "exportacion-fuera.txt")
-CLAVES_LOCALES = ["TMDB_API_KEY", "TORBOX_API_KEY", "TRAKT_CLIENT_ID", "TRAKT_CLIENT_SECRET",
+CLAVES_LOCALES = ["TMDB_API_KEY", "TORBOX_API_KEY", "TRAKT_CLIENT_ID", "TRAKT_CLIENT_ID_PUBLICA", "TRAKT_CLIENT_SECRET",
                   "BALOOTV_RELEASE_STORE_PASSWORD", "BALOOTV_RELEASE_KEY_PASSWORD"]
 
 # Ejemplos que sí pueden aparecer (documentación y pruebas).

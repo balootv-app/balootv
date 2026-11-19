@@ -52,6 +52,7 @@ import com.nuvio.tv.balootv.ajustes.Fila
 import com.nuvio.tv.balootv.ajustes.FilaAddon
 import com.nuvio.tv.balootv.fuentes.Comprobacion
 import com.nuvio.tv.balootv.fuentes.ComprobacionFuente
+import com.nuvio.tv.balootv.fuentes.GuiaFuentes
 import com.nuvio.tv.balootv.ui.componentes.EscalaTv
 import com.nuvio.tv.balootv.ui.componentes.Text
 
@@ -59,6 +60,12 @@ import com.nuvio.tv.balootv.ui.componentes.Text
 const val GUIA_FUENTES = "Una fuente es la dirección de un addon de Stremio (acaba en manifest.json). Escanea el código " +
     "con el móvil y pega ahí una o varias, una por línea. Si la dirección lleva tu clave de TorBox, puedes poner " +
     "{torbox} en su lugar. La tele comprueba cada una antes de añadirla."
+
+/** «¿No sabes qué poner? Mira la guía: …», bajo la explicación de las fuentes (aquí y en el primer arranque). */
+@Composable
+fun LineaGuiaFuentes(modifier: Modifier = Modifier) {
+    Text(GuiaFuentes.linea, modifier, color = Color.White, fontSize = EscalaTv.CUERPO, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
+}
 
 /** La pantalla «Fuentes», desde Ajustes o desde una ficha sin fuentes. */
 @Composable
@@ -82,6 +89,7 @@ fun FuentesScreen(onVolver: () -> Unit, viewModel: FuentesViewModel = hiltViewMo
                     modifier = Modifier.size(280.dp, 158.dp).clip(RoundedCornerShape(15.dp)),
                 )
                 Text(GUIA_FUENTES, color = Color.White.copy(alpha = 0.65f), fontSize = EscalaTv.CUERPO, textAlign = TextAlign.Center)
+                LineaGuiaFuentes()
             }
             Spacer(Modifier.width(60.dp))
             ContenidoFuentes(viewModel, Modifier.fillMaxWidth())

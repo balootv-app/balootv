@@ -91,6 +91,8 @@ responsable de las fuentes que añade y de cumplir la ley de su país.
 
 Este producto usa la API de TMDB, pero no está respaldado ni certificado por TMDB.
 
+BalooTV usa Trakt, pero no está avalada ni certificada por Trakt.
+
 ## Para desarrolladores
 
 Para colaborar y compilar la app, mira [`CONTRIBUTING.md`](CONTRIBUTING.md).

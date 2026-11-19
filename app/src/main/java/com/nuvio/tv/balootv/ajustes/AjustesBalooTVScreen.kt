@@ -44,10 +44,16 @@ import androidx.tv.material3.ClickableSurfaceDefaults
 import androidx.tv.material3.Surface
 import com.nuvio.tv.balootv.ui.componentes.Text
 import com.nuvio.tv.R
+import com.nuvio.tv.balootv.cuenta.PasoTrakt
+import com.nuvio.tv.balootv.cuenta.TextosTrakt
+import com.nuvio.tv.core.qr.QrCodeGenerator
 import com.nuvio.tv.balootv.ui.componentes.EscalaTv
 
 /** Atribución que exige TMDB. */
 const val TEXTO_TMDB = "Este producto usa la API de TMDB, pero TMDB no lo respalda ni lo certifica. Fichas, carteles y fondos: The Movie Database (TMDB)."
+
+/** El aviso que Trakt pide a las apps que usan su API. */
+const val TEXTO_TRAKT = "BalooTV usa Trakt, pero no está avalada ni certificada por Trakt."
 
 internal val FONDO = Brush.radialGradient(listOf(Color(0xFF1F2B2E), Color(0xFF0D1012), Color.Black), radius = 1400f)
 private val FORMA = RoundedCornerShape(10.dp)
@@ -58,7 +64,6 @@ private val FORMA = RoundedCornerShape(10.dp)
  */
 @Composable
 fun AjustesBalooTVScreen(
-    onAbrirTrakt: () -> Unit,
     onAbrirFuentes: () -> Unit,
     onRepetirPrimerosPasos: () -> Unit,
     onVolver: () -> Unit,
@@ -69,6 +74,7 @@ fun AjustesBalooTVScreen(
     val entrada by viewModel.entrada.collectAsState()
     val plataformas by viewModel.plataformasConEstado.collectAsState()
     val vinculacion by viewModel.vinculacion.collectAsState()
+    val vinculacionTrakt by viewModel.vinculacionTrakt.collectAsState()
     var abierta by remember { mutableStateOf<SeccionAjustes?>(null) }
     var enfocada by remember { mutableStateOf(SeccionAjustes.TRAKT) }
     var aviso by remember { mutableStateOf<String?>(null) }
@@ -78,7 +84,8 @@ fun AjustesBalooTVScreen(
     BackHandler {
         if (abierta != null) { abierta = null; confirmarDesconexion = false; viewModel.cancelarVinculo() } else onVolver()
     }
-    LaunchedEffect(abierta, entrada != null) { if (entrada != null) runCatching { primera.requestFocus() } }
+    // También al conectar Trakt: la fila enfocada («Pedir otro código») desaparece y la que queda es «Cuenta».
+    LaunchedEffect(abierta, entrada != null, entrada?.usuarioTrakt) { if (entrada != null) runCatching { primera.requestFocus() } }
 
     Box(Modifier.fillMaxSize().background(Color.Black).background(FONDO)) {
         Text(
@@ -113,9 +120,9 @@ fun AjustesBalooTVScreen(
                             modifier = (if (f.seccion == SeccionAjustes.TRAKT) Modifier.focusRequester(primera) else Modifier)
                                 .onFocusChanged { if (it.isFocused) enfocada = f.seccion },
                         ) {
-                            // Sin cuenta, la vinculación (código y QR) sigue siendo la heredada; con cuenta, todo aquí.
+                            // Trakt sin cuenta: se pide el código al entrar, como TorBox (nada de la pantalla heredada).
                             when {
-                                f.seccion == SeccionAjustes.TRAKT && e.usuarioTrakt == null -> onAbrirTrakt()
+                                f.seccion == SeccionAjustes.TRAKT && e.usuarioTrakt == null -> { abierta = f.seccion; viewModel.vincularTrakt() }
                                 f.seccion == SeccionAjustes.FUENTES -> onAbrirFuentes()
                                 else -> abierta = f.seccion
                             }
@@ -163,9 +170,17 @@ fun AjustesBalooTVScreen(
                         item { Text(stringResource(R.string.about_gpl_attribution), color = Color.White.copy(alpha = 0.5f), fontSize = EscalaTv.PIE_1, modifier = Modifier.padding(top = 12.dp, start = 4.dp)) }
                         // TMDB pide su aviso en la app que usa su API (https://www.themoviedb.org/api-terms-of-use).
                         item { Text(TEXTO_TMDB, color = Color.White.copy(alpha = 0.5f), fontSize = EscalaTv.PIE_1, modifier = Modifier.padding(top = 6.dp, start = 4.dp)) }
+                        item { Text(TEXTO_TRAKT, color = Color.White.copy(alpha = 0.5f), fontSize = EscalaTv.PIE_1, modifier = Modifier.padding(top = 6.dp, start = 4.dp)) }
                     }
-                    SeccionAjustes.TRAKT -> {
-                        item { Fila("Cuenta", e.usuarioTrakt.orEmpty(), Modifier.focusRequester(primera)) {} }
+                    SeccionAjustes.TRAKT -> if (e.usuarioTrakt == null) {
+                        item {
+                            Fila(if (vinculacionTrakt is PasoTrakt.Fallo) "Volver a intentarlo" else "Pedir otro código", "", Modifier.focusRequester(primera)) {
+                                viewModel.vincularTrakt()
+                            }
+                        }
+                        vinculacionTrakt?.let { p -> item { PanelTrakt(p) } }
+                    } else {
+                        item { Fila("Cuenta", e.usuarioTrakt, Modifier.focusRequester(primera)) {} }
                         item {
                             Fila(if (confirmarDesconexion) "Pulsa otra vez para desconectar" else "Desconectar", "") {
                                 if (!confirmarDesconexion) confirmarDesconexion = true
@@ -205,6 +220,28 @@ internal fun Fila(titulo: String, valor: String, modifier: Modifier = Modifier, 
 private fun Opcion(titulo: String, marcada: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) =
     Fila(titulo, if (marcada) "✓" else "", modifier, onClick)
 
+/** El código de Trakt para aprobar desde el móvil (o su QR), y luego cómo ha ido. */
+@Composable
+internal fun PanelTrakt(p: PasoTrakt) {
+    Row(Modifier.fillMaxWidth().padding(top = 16.dp, start = 4.dp), horizontalArrangement = Arrangement.spacedBy(24.dp), verticalAlignment = Alignment.CenterVertically) {
+        when (p) {
+            PasoTrakt.Pidiendo -> Text("Pidiendo un código a Trakt…", color = Color.White, fontSize = EscalaTv.CUERPO)
+            is PasoTrakt.Codigo -> {
+                val qr = remember(p.direccion) { QrCodeGenerator.generate("https://${p.direccion}", 360) }
+                Image(qr.asImageBitmap(), contentDescription = "Código QR para vincular Trakt", modifier = Modifier.size(180.dp))
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text("En el móvil, entra en ${p.direccion} con tu cuenta de Trakt y escribe:", color = Color.White.copy(alpha = 0.75f), fontSize = EscalaTv.CUERPO)
+                    Text(p.codigo, color = Color.White, fontSize = EscalaTv.TITULAR, fontWeight = FontWeight.SemiBold)
+                    Text("O escanea el código QR. La tele se vincula sola al aprobarlo.", color = Color.White.copy(alpha = 0.6f), fontSize = EscalaTv.CUERPO)
+                    TextosTrakt.pistaBajoCodigo?.let { Text(it, color = Color.White.copy(alpha = 0.6f), fontSize = EscalaTv.PIE_1) }
+                }
+            }
+            is PasoTrakt.Hecho -> Text("Listo: Trakt conectado${p.usuario?.let { " como $it" }.orEmpty()}.", color = Color.White, fontSize = EscalaTv.CUERPO)
+            is PasoTrakt.Fallo -> Text(p.motivo, color = Color.White, fontSize = EscalaTv.CUERPO)
+        }
+    }
+}
+
 /** El código de TorBox para aprobar desde el móvil (o su QR), y luego cómo ha ido. */
 @Composable
 internal fun PanelVinculo(v: Vinculacion) {
@@ -216,7 +253,7 @@ internal fun PanelVinculo(v: Vinculacion) {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text("En el móvil, entra en ${v.paso.direccion} con tu cuenta de TorBox y escribe:", color = Color.White.copy(alpha = 0.75f), fontSize = EscalaTv.CUERPO)
                     Text(v.paso.codigo, color = Color.White, fontSize = EscalaTv.TITULAR, fontWeight = FontWeight.SemiBold)
-                    Text("O escanea el código QR. La tele cambia de cuenta sola al aprobarlo.", color = Color.White.copy(alpha = 0.6f), fontSize = EscalaTv.CUERPO)
+                    Text("O escanea el código QR. La tele se vincula sola al aprobarlo.", color = Color.White.copy(alpha = 0.6f), fontSize = EscalaTv.CUERPO)
                 }
             }
             Vinculacion.Hecha -> Text("Listo: BalooTV ya usa tu cuenta de TorBox.", color = Color.White, fontSize = EscalaTv.CUERPO)

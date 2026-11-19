@@ -14,8 +14,10 @@ object PublicidadSubtitulos {
     // Perezosas: se compilan dentro del runCatching de esPublicidad, así un fallo de ICU no cierra la app.
     private val ETIQUETAS by lazy { Regex("""<[^>]+>|\{[^}]*\}""") }
     private val FIRMA by lazy { Regex("""ripead|ripped by|\bsubs? ?by\b|\bsync\b|\bresync|corrections by|descargad[oa] de""") }
+    /** Los finales de web que usan las de descargas (también para las sinopsis con anuncio, `SinopsisSinAnuncio`). */
+    const val DOMINIOS = "com|net|org|wtf|to|tv|info|cc|ws|biz|me|io|xyz|club|site|nu|li|lol|mx|ar"
     private val WEB by lazy {
-        Regex("""\bwww\.|\b[a-z0-9-]{2,}\.(?:com|net|org|wtf|to|tv|info|cc|ws|biz|me|io|xyz|club|site|nu|li|lol|mx|ar)\b""")
+        Regex("""\bwww\.|\b[a-z0-9-]{2,}\.(?:$DOMINIOS)\b""")
     }
 
     fun es(texto: String): Boolean {

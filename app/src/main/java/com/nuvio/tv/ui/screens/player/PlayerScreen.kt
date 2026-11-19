@@ -1400,7 +1400,12 @@ fun PlayerScreen(
                 onNoEsCastellano = if (uiState.currentStreamUrl.isNullOrBlank()) null else {
                     { viewModel.controller.marcarNoCastellano() }
                 },
-                anime = viewModel.controller.esAnime
+                anime = viewModel.controller.esAnime,
+                // Al elegir otra: señal inmediata de que se prepara, o de por qué no se puede.
+                porQueNoEmpieza = uiState.sourceStreamsError
+                    ?: com.nuvio.tv.balootv.fuentes.TextoNoReproducible.PREPARANDO.takeIf {
+                        uiState.isLoadingSourceStreams && !uiState.lineasFuente.isNullOrEmpty()
+                    }
             )
         }
 

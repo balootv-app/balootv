@@ -10,13 +10,16 @@ import com.nuvio.tv.balootv.catalogo.Plataforma
 import com.nuvio.tv.balootv.cuenta.ClaveTorbox
 import com.nuvio.tv.balootv.cuenta.CuentaTorbox
 import com.nuvio.tv.balootv.cuenta.EstadoTorbox
+import com.nuvio.tv.balootv.cuenta.PasoTrakt
 import com.nuvio.tv.balootv.cuenta.PasoVinculo
+import com.nuvio.tv.balootv.cuenta.VinculoTrakt
 import com.nuvio.tv.balootv.cuenta.VinculoTorbox
 import com.nuvio.tv.core.qr.QrCodeGenerator
 import com.nuvio.tv.data.local.PlayerSettingsDataStore
 import com.nuvio.tv.data.local.StreamAutoPlayMode
 import com.nuvio.tv.data.local.TraktAuthDataStore
 import com.nuvio.tv.data.repository.TraktAuthService
+import com.nuvio.tv.data.repository.TraktProgressService
 import com.nuvio.tv.domain.repository.AddonRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -45,6 +48,7 @@ class AjustesBalooTVViewModel @Inject constructor(
     private val vinculo: VinculoTorbox,
     private val plataformas: AlmacenPlataformas,
     addons: AddonRepository,
+    private val progresoTrakt: TraktProgressService,
 ) : ViewModel() {
 
     private val torbox = MutableStateFlow<EstadoTorbox?>(null)
@@ -102,6 +106,23 @@ class AjustesBalooTVViewModel @Inject constructor(
     fun cancelarVinculo() {
         vinculando?.cancel()
         vinculacion.value = null
+        vinculandoTrakt?.cancel()
+        vinculacionTrakt.value = null
+    }
+
+    /** La vinculación de Trakt en curso (código a la vista); null si no se está vinculando. */
+    val vinculacionTrakt = MutableStateFlow<PasoTrakt?>(null)
+    private var vinculandoTrakt: Job? = null
+
+    /** Pide un código a Trakt y lo enseña aquí mismo, sin pasar por la pantalla heredada «Seguimiento». */
+    fun vincularTrakt() {
+        vinculandoTrakt?.cancel()
+        vinculandoTrakt = viewModelScope.launch {
+            VinculoTrakt(sesionTrakt::startDeviceAuth, sesionTrakt::pollDeviceToken).vincular().collect { p ->
+                vinculacionTrakt.value = p
+                if (p is PasoTrakt.Hecho) progresoTrakt.refreshNow()
+            }
+        }
     }
 
     fun elegirModo(manual: Boolean) = viewModelScope.launch {
@@ -131,7 +152,7 @@ class AjustesBalooTVViewModel @Inject constructor(
     }
 
     /** Vacía la caché (TMDB, imágenes): la próxima vez todo se pide de nuevo. */
-    /** Revoca el token en Trakt y borra la sesión; para volver a vincular se usa la pantalla heredada. */
+    /** Revoca el token en Trakt y borra la sesión. */
     fun desconectarTrakt(hecho: () -> Unit) = viewModelScope.launch {
         sesionTrakt.revokeAndLogout()
         hecho()

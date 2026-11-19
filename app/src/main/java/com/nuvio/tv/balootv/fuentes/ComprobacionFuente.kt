@@ -1,7 +1,9 @@
 package com.nuvio.tv.balootv.fuentes
 
 import com.nuvio.tv.core.network.NetworkResult
+import com.nuvio.tv.core.streams.supportsStreamResource
 import com.nuvio.tv.domain.model.Addon
+import com.nuvio.tv.domain.model.Stream
 
 /** Lo que pasa con cada dirección que el usuario intenta añadir como fuente. */
 sealed interface Comprobacion {
@@ -14,6 +16,11 @@ sealed interface Comprobacion {
     data object NoEsAddon : Comprobacion
     /** Es un addon, pero de catálogos o subtítulos: no da enlaces para reproducir. */
     data class SinEnlaces(val nombre: String) : Comprobacion
+    /**
+     * Da enlaces, pero solo de torrent: sin la parte de TorBox en la dirección la app no puede reproducirlos (no hay
+     * motor de torrents). No se añade, para que nadie se quede con una app que «no reproduce» sin saber por qué.
+     */
+    data class SinTorbox(val nombre: String) : Comprobacion
 }
 
 /**
@@ -68,6 +75,25 @@ object ComprobacionFuente {
         NetworkResult.Loading -> Comprobacion.NoResponde
     }
 
+    /** Títulos muy conocidos para preguntar a una fuente nueva qué clase de enlaces da: película y episodio. */
+    private val SONDEOS = listOf("movie" to "tt0111161", "series" to "tt0903747:1:1")
+
+    /**
+     * Si hay que preguntar a la fuente qué enlaces da antes de aceptarla: solo cuando la dirección no lleva la clave
+     * de TorBox (con `{torbox}` los enlaces ya pasan por TorBox). Devuelve el tipo y el identificador a preguntar, o
+     * null si no hace falta o si la fuente no admite ninguno (entonces se acepta sin preguntar).
+     */
+    fun sondeo(plantilla: String, addon: Addon): Pair<String, String>? {
+        if (PlantillaFuente.lleva(plantilla)) return null
+        return SONDEOS.firstOrNull { (tipo, id) -> addon.supportsStreamResource(tipo, id) }
+    }
+
+    /**
+     * Si los enlaces de una fuente son todos de torrent (sin dirección web que reproducir). Sin enlaces no se sabe:
+     * cuenta como que sí sirve, mejor que rechazar una fuente buena.
+     */
+    fun soloTorrents(enlaces: List<Stream>): Boolean = enlaces.isNotEmpty() && enlaces.all { it.isTorrent() }
+
     /** El texto para la tele y la página del móvil. */
     fun texto(c: Comprobacion): String = when (c) {
         is Comprobacion.Valida -> "Añadida: ${c.nombre}"
@@ -77,6 +103,7 @@ object ComprobacionFuente {
         Comprobacion.NoResponde -> "No responde: comprueba la dirección o prueba más tarde"
         Comprobacion.NoEsAddon -> "No es un addon de Stremio (no tiene manifiesto)"
         is Comprobacion.SinEnlaces -> "${c.nombre} no da enlaces para reproducir"
+        is Comprobacion.SinTorbox -> "${c.nombre}: esta fuente no está preparada para TorBox, le falta {torbox} en la dirección"
     }
 
     /** La dirección para enseñarla sin la clave: solo el sitio. */

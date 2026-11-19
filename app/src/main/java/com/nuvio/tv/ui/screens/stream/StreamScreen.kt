@@ -271,7 +271,7 @@ fun StreamScreen(
 
     LaunchedEffect(uiState.playbackErrorMessage) {
         val message = uiState.playbackErrorMessage ?: return@LaunchedEffect
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
         viewModel.onPlaybackErrorShown()
     }
 
