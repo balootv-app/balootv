@@ -10,7 +10,8 @@ licencias de lo que lleva dentro, en [`NOTICE.md`](NOTICE.md).
 ## Qué necesitas
 
 - Una tele o aparato con **Android TV, Google TV o Fire TV** (Android 7 o superior).
-- Una cuenta de **TorBox**. BalooTV no incluye ninguna.
+- **Tu propio servicio.** Hoy la app funciona con TorBox, un servicio aparte que contratas tú. BalooTV no incluye
+  ninguna cuenta.
 - **Tus propias fuentes** (addons de Stremio). BalooTV no trae ninguna: las añades tú en el primer arranque.
 - Opcional: una cuenta de **Trakt**, para recordar lo que has visto y seguir donde lo dejaste.
 
@@ -84,14 +85,22 @@ Sí, la app es gratuita y de código abierto. TorBox es un servicio aparte y tie
 **¿Hay versión para móvil?**
 Por ahora no.
 
-## Aviso legal
+## Lo que BalooTV no es
 
-BalooTV es un reproductor. **No aloja, no enlaza ni distribuye contenido**, y no trae fuentes. Cada usuario es
-responsable de las fuentes que añade y de cumplir la ley de su país.
+- **No es un servicio de vídeo ni un catálogo.** Es un reproductor y un organizador. Reproduce lo que le llega de las
+  fuentes y del servicio que conectas tú, y está pensado para contenido que es tuyo o que tienes derecho a ver. **No
+  aloja, no guarda y no distribuye contenido.**
+- **No trae fuentes ni las recomienda.** Recién instalada está vacía. Las fuentes son de terceros y cada usuario
+  responde de las que añade y de cumplir la ley de su país.
+- **No tiene relación con nadie más.** Es un proyecto independiente: no está afiliada a Nuvio, Trakt, TMDB ni TorBox,
+  ni a ningún addon, fuente o proveedor de contenido.
+- **No guarda nada tuyo.** Sin anuncios, sin analítica y sin cuenta de BalooTV.
 
 Este producto usa la API de TMDB, pero no está respaldado ni certificado por TMDB.
 
-BalooTV usa Trakt, pero no está avalada ni certificada por Trakt.
+BalooTV usa Trakt para el historial y las listas, pero no está avalada ni certificada por Trakt.
+
+Aviso legal completo, privacidad, contacto y cómo pedir una retirada: <https://balootv-app.github.io/legal.html>.
 
 ## Para desarrolladores
 
