@@ -132,8 +132,15 @@ fun AvisoActualizacion(visible: Boolean, viewModel: ActualizacionViewModel = hil
 
 @Composable
 private fun Notas(notas: String) {
-    // Las notas de GitHub vienen en Markdown: la primera línea con texto que no sea un título basta.
-    val linea = notas.lines().map { it.trim() }.filterNot { it.startsWith("#") }
-        .map { it.trimStart('-', '*', ' ') }.firstOrNull { it.isNotBlank() } ?: return
+    val linea = lineaDeNotas(notas) ?: return
     Text(linea, color = Color.White.copy(alpha = 0.7f), fontSize = EscalaTv.PIE_1, maxLines = 2)
 }
+
+/**
+ * Las notas de GitHub vienen en Markdown: basta la primera línea con texto que no sea un título, sin las marcas
+ * de código (`` ` ``) ni de negrita, que en la tele saldrían tal cual.
+ */
+internal fun lineaDeNotas(notas: String): String? =
+    notas.lines().map { it.trim() }.filterNot { it.startsWith("#") }
+        .map { it.trimStart('-', '*', ' ').replace("`", "").replace("**", "").replace("__", "").trim() }
+        .firstOrNull { it.isNotBlank() }

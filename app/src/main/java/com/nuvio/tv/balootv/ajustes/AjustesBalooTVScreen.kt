@@ -55,6 +55,9 @@ const val TEXTO_TMDB = "Este producto usa la API de TMDB, pero TMDB no lo respal
 /** El aviso que Trakt pide a las apps que usan su API. */
 const val TEXTO_TRAKT = "BalooTV usa Trakt, pero no está avalada ni certificada por Trakt."
 
+/** La frase exacta que pide Trakt, en inglés. */
+const val TEXTO_TRAKT_EN = "BalooTV uses Trakt but is not endorsed or certified by Trakt."
+
 internal val FONDO = Brush.radialGradient(listOf(Color(0xFF1F2B2E), Color(0xFF0D1012), Color.Black), radius = 1400f)
 private val FORMA = RoundedCornerShape(10.dp)
 
@@ -171,6 +174,7 @@ fun AjustesBalooTVScreen(
                         // TMDB pide su aviso en la app que usa su API (https://www.themoviedb.org/api-terms-of-use).
                         item { Text(TEXTO_TMDB, color = Color.White.copy(alpha = 0.5f), fontSize = EscalaTv.PIE_1, modifier = Modifier.padding(top = 6.dp, start = 4.dp)) }
                         item { Text(TEXTO_TRAKT, color = Color.White.copy(alpha = 0.5f), fontSize = EscalaTv.PIE_1, modifier = Modifier.padding(top = 6.dp, start = 4.dp)) }
+                        item { Text(TEXTO_TRAKT_EN, color = Color.White.copy(alpha = 0.5f), fontSize = EscalaTv.PIE_1, modifier = Modifier.padding(start = 4.dp)) }
                     }
                     SeccionAjustes.TRAKT -> if (e.usuarioTrakt == null) {
                         item {
@@ -233,7 +237,6 @@ internal fun PanelTrakt(p: PasoTrakt) {
                     Text("En el móvil, entra en ${p.direccion} con tu cuenta de Trakt y escribe:", color = Color.White.copy(alpha = 0.75f), fontSize = EscalaTv.CUERPO)
                     Text(p.codigo, color = Color.White, fontSize = EscalaTv.TITULAR, fontWeight = FontWeight.SemiBold)
                     Text("O escanea el código QR. La tele se vincula sola al aprobarlo.", color = Color.White.copy(alpha = 0.6f), fontSize = EscalaTv.CUERPO)
-                    TextosTrakt.pistaBajoCodigo?.let { Text(it, color = Color.White.copy(alpha = 0.6f), fontSize = EscalaTv.PIE_1) }
                 }
             }
             is PasoTrakt.Hecho -> Text("Listo: Trakt conectado${p.usuario?.let { " como $it" }.orEmpty()}.", color = Color.White, fontSize = EscalaTv.CUERPO)

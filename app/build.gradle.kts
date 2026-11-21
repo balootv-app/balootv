@@ -143,8 +143,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         minSdk = 24
         targetSdk = 36
-        versionCode = 48
-        versionName = "1.1.1"
+        versionCode = 49
+        versionName = "1.1.2"
         // Solo castellano (y el inglés por defecto como reserva de textos).
         androidResources.localeFilters += listOf("es")
 

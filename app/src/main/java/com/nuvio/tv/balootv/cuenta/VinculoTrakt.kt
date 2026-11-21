@@ -1,6 +1,5 @@
 package com.nuvio.tv.balootv.cuenta
 
-import com.nuvio.tv.balootv.edicion.Edicion
 import com.nuvio.tv.data.remote.dto.trakt.TraktDeviceCodeResponseDto
 import com.nuvio.tv.data.repository.TraktTokenPollResult
 import kotlinx.coroutines.delay
@@ -70,13 +69,10 @@ class VinculoTrakt(
 
 /** Los textos de la vinculación de Trakt. */
 object TextosTrakt {
-    /**
-     * Mientras la app de Trakt de BalooTV siga en pruebas, Trakt solo deja entrar a su dueño: a cualquier otro le dice
-     * en su web que la app no está disponible y la tele nunca recibe la aprobación. Por eso se avisa ya con el código.
-     */
-    const val NO_ABIERTO = "Trakt aún no está abierto para todos en BalooTV; la app funciona igual sin él."
+    /** Trakt es opcional: si no se vincula, la app funciona igual. */
+    const val NO_ABIERTO = "La app funciona igual sin Trakt."
 
-    const val PISTA = "Si Trakt te dice que la app no está disponible: $NO_ABIERTO"
+    const val PISTA = "Puedes volver a intentarlo o seguir sin él: $NO_ABIERTO"
 
     const val DENEGADO = "Trakt no ha dejado vincularla. $PISTA"
 
@@ -85,7 +81,4 @@ object TextosTrakt {
     /** No se pudo ni pedir el código: el motivo que da Trakt, o uno genérico. */
     fun sinCodigo(motivo: String?): String =
         motivo?.takeIf { it.isNotBlank() } ?: "No se pudo pedir el código a Trakt. Vuelve a intentarlo."
-
-    /** La pista bajo el código, solo en la edición pública (en casa entra su dueño). */
-    val pistaBajoCodigo: String? get() = PISTA.takeIf { Edicion.esPublica }
 }
