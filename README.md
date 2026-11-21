@@ -100,6 +100,8 @@ Este producto usa la API de TMDB, pero no está respaldado ni certificado por TM
 
 BalooTV usa Trakt para el historial y las listas, pero no está avalada ni certificada por Trakt.
 
+*BalooTV uses Trakt but is not endorsed or certified by Trakt.*
+
 Aviso legal completo, privacidad, contacto y cómo pedir una retirada: <https://balootv-app.github.io/legal.html>.
 
 ## Para desarrolladores
